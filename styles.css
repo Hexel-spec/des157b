@@ -80,6 +80,22 @@ main section {
     /* background-color:  #b7bec3;; */
 }
 
+#projects.switch {
+    background-image: url(images/red.PNG);
+}
+
+#research.switch {
+    background-image: url(images/yellow.PNG);
+}
+
+#development.switch {
+    background-image: url(images/blue.PNG);
+}
+
+#capstone.switch {
+    background-image: url(images/green.PNG);
+}
+
 #projects a {
     background-color: rgb(229, 126, 126);
 }
