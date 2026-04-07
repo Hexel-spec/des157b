@@ -189,12 +189,14 @@ section.switch a:hover {
 
 button {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10%;
+    right: 10%;
     padding: 12px;
-    background-color: orange;
+    background-color: rgb(82, 82, 82);
+    border-radius: 200px;
     color: #333;
     border: 1px solid transparent;
+    transition: all 0.25s;
 }
 
 button:hover {
@@ -203,11 +205,11 @@ button:hover {
 }
 
 button.switch {
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(233, 233, 233);
     border-color: #333;
 }
 
 button.switch:hover {
-    background-color: #333;
+    background-color: #606062;
     color: rgb(235, 235, 235)
 }
