@@ -16,6 +16,7 @@ h1 {
     margin: 0;
 }
 
+
 /* Page styling */
 body {
     background-color: #d9e0e4;
@@ -164,9 +165,10 @@ section li {
 section a {
     line-height: 1.1em;
     display: inline-block;
-    padding: .4em 1em .4em .4em;
+    padding: 5px 1em 5px 5px;
     margin: 0.2em;
     color: #333;
+    border: 2px solid #33333300;
     /* color: orange; */
     font-weight: 600;
 }
@@ -177,7 +179,6 @@ section a:hover {
 }
 
 section.switch a {
-    border: 2px solid #33333300;
     color: #333;
 }
 
