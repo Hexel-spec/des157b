@@ -10,10 +10,14 @@ img {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 6em;
     font-weight: 900;
     font-style: italic;
     margin: 0;
+}
+
+h2 {
+    font-size: 3em;
 }
 
 
@@ -78,6 +82,8 @@ header {
 
 main {
     display: flex;
+    flex-direction: column;
+    font-size: 3em;
     justify-content: space-evenly;
     margin: 0.25em auto;
     width: 1100px;
@@ -86,7 +92,7 @@ main {
 main section {
     flex: 1;
     /* border: 1px rgb(235, 235, 235) dashed; */
-    margin: 0 .3em 0 0;
+    margin: 0 0 0.4em 0;
     padding: 1em;
     background-color:  #b7bec3;
 }
@@ -163,7 +169,7 @@ section li {
 }
 
 section a {
-    line-height: 1.1em;
+    line-height: 2em;
     display: inline-block;
     padding: 5px 1em 5px 5px;
     margin: 0.2em;
@@ -190,9 +196,16 @@ section.switch a:hover {
 }
 
 button {
-    position: absolute;
+    position: fixed;
+    top: 85%;
+    right: 10%;
+    z-index: 5;
+    width: 150px;
+    height: 150px;
+    z-index: 5;
+    /* position: absolute;
     top: 20px;
-    right: 80px;
+    right: 80px; */
     padding: 12px;
     background-color: rgb(82, 82, 82);
     border-radius: 200px;
@@ -207,46 +220,61 @@ button:hover {
 }
 
 button.switch {
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(177, 177, 177);
     border-color: #333;
 }
 
 button.switch:hover {
-    background-color: #606062;
+    background-color: coral;
     color: rgb(235, 235, 235)
 }
 
-@media screen and (max-width: 600px) {
-
-    header h1 {
-        font-size: 6em;
-    }
-
-    header h2 {
-        font-size: 3em;
-    }
-    
-    main {
-        flex-direction: column;
-        font-size: 3em;
-    }
-
-    main section {
-        margin: 0 0 0.4em 0;
-    }
-
-    button {
-        position: fixed;
-        top: 85%;
-        z-index: 5;
-        width: 150px;
-        height: 150px;
-    }
-
-    button img {
+button img {
         width: 100px;
         height: 100px;
         margin-left: 10px;
+    }
+
+@media screen and (min-width: 600px) {
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    main {
+        flex-direction: row;
+        font-size: 1em;
+    }
+
+    main section {
+        margin: 0 .3em 0 0;
+    }
+
+    button {
+        /* position: fixed;
+        top: 85%;
+        z-index: 5;
+        width: 150px;
+        height: 150px; */
+        position: absolute;
+        top: 20px;
+        right: 80px;
+        width: 75px;
+        height: 75px;
+    }
+
+    button img {
+        width: 50px;
+        height: 50px;
+        margin-left: 0;
+    }
+
+    section a {
+        line-height: 1.1em;
     }
 
 }
