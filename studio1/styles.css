@@ -11,28 +11,28 @@ body {
     background-color: rgb(20, 20, 20);
 }
 
-.fa-expand {
+.fa-expand, .fa-compress {
     position: absolute;
-    bottom: 60px;
-    right: 100px;
+    bottom: 8%;
+    right: 3.5em;
     font-size: 2em;
     color: white;
     z-index: 5;
 }
 
-.fa-volume-xmark {
+.fa-volume-xmark, .fa-volume-high {
     position: absolute;
-    bottom: 60px;
-    right: 160px;
+    bottom: 8%;
+    right: 5em;
     font-size: 2em;
     color: white;
     z-index: 5;
 }
 
-.fa-pause {
+.fa-pause, .fa-play {
     position: absolute;
-    bottom: 60px;
-    right: 230px;
+    bottom: 8%;
+    right: 7em;
     font-size: 2em;
     color: white;
     z-index: 5;
@@ -47,6 +47,10 @@ p {
     padding: 1em;
     font-family: 'Lexend Deca', Helvetica, Arial, sans-serif;
     font-size: 1.5em;
+}
+
+#line1, #line2 {
+    transition: all 1s;
 }
 
 #line1 {
