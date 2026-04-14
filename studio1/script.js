@@ -47,7 +47,8 @@
 
     // Something is wrong with this one, fix later
     volToggle.addEventListener('click', function(){
-        if (volToggle.className === 'fa-volume-high') {
+        console.log('clicked and sound is ' +myVideo.muted);
+        if (myVideo.muted == false) {
             volToggle.className = 'fa-solid fa-volume-xmark';
             myVideo.muted = true;
         } else {
