@@ -49,19 +49,32 @@ p {
     font-size: 1.5em;
 }
 
-#line1, #line2 {
+#line1, #line2, #line3 {
     transition: all 1s;
 }
 
 #line1 {
     position: absolute;
-    top: 2em;
+    top: 8em;
     left: 5em;
 }
 
-#line2 {
+/* If there's only 2 lines: */
+/* #line2 {
     position: absolute;
     top: 5em;
+    right: 5em;
+} */
+
+#line2 {
+    position: absolute;
+    top: 12em;
+    left: 25em;
+} 
+
+#line3 {
+    position: absolute;
+    top: 14em;
     right: 5em;
 }
 

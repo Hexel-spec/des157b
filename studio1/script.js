@@ -9,12 +9,13 @@
     const fullScreen = document.querySelector('.fa-expand');
     const line1 = document.querySelector('#line1');
     const line2 = document.querySelector('#line2');
+    const line3 = document.querySelector('#line3');
     let playing = true;
 
     const script = {
-        start: [1, 6],
-        stop: [5, 9],
-        line: [line1, line2]
+        start: [1, 6, 11],
+        stop: [5, 10, 15],
+        line: [line1, line2, line3]
     }
 
     const intervalID = setInterval(checkTime, 1000)
