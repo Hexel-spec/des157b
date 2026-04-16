@@ -10,6 +10,7 @@
     const line1 = document.querySelector('#line1');
     const line2 = document.querySelector('#line2');
     const line3 = document.querySelector('#line3');
+    const message = document.querySelector('#message');
     let playing = true;
 
     const script = {
@@ -19,6 +20,12 @@
     }
 
     const intervalID = setInterval(checkTime, 1000)
+
+    if (playing === true) {
+        setTimeout(function(){
+            message.className = 'hidden';
+        }, 5000)
+    }
 
     function checkTime() {
         for (let i = 0; i < script.start.length; i++) {
