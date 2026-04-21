@@ -1,0 +1,22 @@
+body {
+    background-color: salmon;
+    font-family: 'Sour Gummy';
+}
+
+header {
+    background-color: lightblue;
+    margin: 0;
+    padding: 0.75em;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+main {
+    margin: auto;
+}
+
+#display {
+    background-color: lightblue;
+}
