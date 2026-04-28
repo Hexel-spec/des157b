@@ -1,0 +1,58 @@
+{
+  "point1" : {
+    "date": "3/30",
+    "location": "SCC Vending Machine",
+    "item": "Starbucks Frappuccino Mocha Drink",
+    "price": 3.75,
+    "image": "images/mocha.png"
+  },
+  "point2" : {
+    "date": "3/31",
+    "location": "SCC Vending Machine",
+    "item": "Starbucks Frappuccino Mocha Drink 2.0",
+    "price": 3.75,
+    "image": "images/mocha.png"
+  },
+  "point3" : {
+    "date": "4/3",
+    "location": "Sage St. Coffee",
+    "item": "Latte",
+    "price": 4.99,
+    "image": "images/latte.png"
+  },
+  "point4" :{
+    "date": "4/7",
+    "location": "Memorial Union",
+    "item": "Ciao Pizza",
+    "price": 8.00,
+    "image": "images/pizza.png"
+  },
+  "point5" :{
+    "date": "4/10",
+    "location": "Spokes Grill",
+    "item": "Unicycle Burger",
+    "price": 7.99,
+    "image": "images/unicycle.png"
+  },
+  "point6" :{
+    "date": "4/18",
+    "location": "Halal Fiesta Taco Truck",
+    "item": "Asada Bowl",
+    "price": 17.42,
+    "image": "images/asada.png"
+  },
+  "point7" :{
+    "date": "4/18",
+    "location": "Cowntown Creamery Truck",
+    "item": "Cookies n' Cream Ice Cream",
+    "price": 9.00,
+    "image": "images/cone.png"
+  },
+  "point8" :{
+    "date": "4/19",
+    "location": "Crazy D's",
+    "item": "Chicken Slider & Fries",
+    "price": 12.49,
+    "image": "images/slider.png"
+  }
+}
