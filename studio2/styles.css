@@ -57,6 +57,10 @@ button:hover {
     background-color: rgb(79, 52, 52);
 }
 
+#display, #display div {
+    transition: all 1s;
+}
+
 #display {
     background-color: lightblue;
     width: 400px;
@@ -107,7 +111,7 @@ button:hover {
 
 #bar div {
     height: 25px;
-    width: 25%;
+    width: 18.75%;
     background-color: lightblue;
     transition: all 1s;
 }

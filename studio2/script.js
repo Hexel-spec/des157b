@@ -3,6 +3,8 @@
     console.log('reading js')
 
     const display = document.querySelector('#display div');
+    const plate = document.querySelector('#display')
+    let img = document.querySelector('#display div img')
     const label = document.querySelector('h3')
     const btns = document.querySelectorAll('button');
     const p1 = document.querySelector('#point1');
@@ -104,14 +106,26 @@
             bar.style.backgroundColor = 'lightblue';
             evaluation.innerHTML = 'cheap';
             evaluation.style.color = 'lightblue'
+            display.style.backgroundColor = 'lightblue'
+            plate.style.backgroundColor = 'lightblue'
+            display.style.boxShadow = 'inset -5px -5px 10px darkcyan'
+            img.style.filter = 'drop-shadow(0px 5px 2px darkcyan)'
         } else if (price > 6.6 && price <= 13.2) {
             bar.style.backgroundColor = 'rgb(237, 215, 120)';
             evaluation.innerHTML = 'moderate';
             evaluation.style.color = 'rgb(255, 255, 182)';
+            display.style.backgroundColor = 'rgb(237, 215, 120)'
+            plate.style.backgroundColor = 'rgb(237, 215, 120)'
+            display.style.boxShadow = 'inset -5px -5px 10px rgb(158, 147, 100)'
+            img.style.filter = 'drop-shadow(0px 5px 2px rgb(158, 147, 100))'
         } else if (price > 13.2){
             bar.style.backgroundColor = 'rgb(253, 63, 6)';
             evaluation.innerHTML = 'expensive';
             evaluation.style.color = 'rgb(185, 51, 10)';
+            display.style.backgroundColor = 'rgb(253, 63, 6)'
+            plate.style.backgroundColor = 'rgb(253, 63, 6)'
+            display.style.boxShadow = 'inset -5px -5px 10px rgb(119, 74, 74)'
+            img.style.filter = 'drop-shadow(0px 5px 2px rgb(119, 74, 74))'
         }
     }
 
