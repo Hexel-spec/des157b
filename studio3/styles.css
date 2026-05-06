@@ -1,0 +1,79 @@
+#canvas-basic {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -5;
+}
+
+body {
+    color: #164F65;
+    font-family: 'Ribeye', Times, serif;
+    font-size: 24px;
+}
+
+h1 {
+    font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    text-align: center;
+}
+
+#question {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#bar {
+    width: 250px;
+    height: 20px;
+    background-color: #CEE9F3;
+    border: 4px solid #164F65;
+    border-radius: 25px;
+    /* display: flex;
+    align-items: center; */
+}
+
+#progress {
+    width: 20%;
+    height: 20px;
+    background-color: #164F65;
+    border-radius: 25px 0 0 25px;
+}
+
+h2 {
+    font-size: 24px;
+    padding: 0.8em;
+    text-align: center;
+}
+
+#red {
+    background-color: #FF786E;
+    border-radius: 0 40px 0 0;
+    width: 390px;
+}
+
+.dropzone-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dropzone {
+    overflow: hidden;
+    margin: .5em;
+    padding: 1em;
+    text-align: center;
+    background: #ccc;
+    line-height: 4em;
+    border: 4px solid white;
+    transition: background .15s linear, border-color .15s linear;
+}

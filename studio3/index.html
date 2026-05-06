@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Liberty</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Add link to any google fonts used here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- add the link to the js library here -->
+
+    <!-- Interact JS - Drag & Drop -->
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+    <!-- Granim - Animated Gradients -->
+    <script src="granim.min.js"></script>
+
+
+    <!-- link to custom js -->
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <canvas id="canvas-basic"></canvas>
+
+    <header>
+        <h1>Layers of the Ocean</h1>
+    </header>
+
+    <main>
+        <section id="info">
+            <div id="question">
+                <p>1/5</p>
+                <div id="bar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+
+            <div id="red">
+                <h2>Anglerfish</h2>
+            </div>
+        </section>
+
+        <div id="anglerfish" class="draggable js-drag">
+            <img src="images/anglerfish.png" alt="anglerfish" width="308">
+        </div>
+
+        <div class="dropzone-wrapper">
+            <div id="sunlight" class="dropzone js-drop">Epipelagic (Sunlight) Zone</div>
+            <div id="twilight" class="dropzone js-drop">Mesopelagic (Twilight) Zone</div>
+            <div id="midnight" class="dropzone js-drop">Bathypelagic (Midnight) Zone</div>
+        </div>
+
+    </main>
+
+
+
+
+    <footer>Libraries used: Granim & Interact JS</footer>
+
+</body>
+
+</html>
