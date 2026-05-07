@@ -20,7 +20,10 @@
     let questionCount = 1;
     const nextBtn = document.querySelector('#next');
     const restartBtn = document.querySelector('#restart');
+    const helpBtn = document.querySelector('#help')
+    const continueBtn = document.querySelector('#continue')
     const dimmer = document.querySelector('#dimmer');
+    const helpMenu = document.querySelector('#help-menu');
     const drag1 = document.querySelector('#drag1');
     const drag2 = document.querySelector('#drag2');
     const drag3 = document.querySelector('#drag3');
@@ -35,6 +38,14 @@
 
     restartBtn.addEventListener('click', function(){
         location.reload();
+    })
+
+    helpBtn.addEventListener('click', function(){
+        helpMenu.className = 'help-menu';
+    })
+
+    continueBtn.addEventListener('click', function(){
+        helpMenu.className = 'hidden';
     })
 
     // import interact from '@interactjs/interactjs'

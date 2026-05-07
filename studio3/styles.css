@@ -16,6 +16,7 @@ body {
     font-size: 24px;
 }
 
+
 h1 {
     font-family: 'Luckiest Guy', Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -28,6 +29,11 @@ h1 {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 1em 1em 0 0.5em
+}
+
+#instructions {
+    margin-left: 0.5em;
 }
 
 #bar {
@@ -52,6 +58,7 @@ h2 {
     font-size: 24px;
     padding: 0.8em;
     text-align: center;
+    margin: 0;
 }
 
 #red {
@@ -79,6 +86,9 @@ h2 {
     transition: background .15s linear, border-color .15s linear;
     min-height: 250px;
 }
+
+/* .dropzone.-drop-possible { border-color: white; } */
+
 
 #drop1 {
     background-color: #CEE9F3;
@@ -158,9 +168,43 @@ footer {
 
 button {
     color: white;
-    background-color: #164F65;
+    background-color: #6E9092;
     border-radius: 50px;
     border: none;
     padding: 0.4em;
     font-size: 0.8em;
+    transition: all 1s;
+}
+
+button:hover {
+    background-color: #164F65;
+}
+
+#help {
+    /* position: absolute;
+    top: 150px;
+    right: 150px; */
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    font-size: 1em;
+}
+
+.help-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9em;
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5em;
+    padding: 1em;
 }

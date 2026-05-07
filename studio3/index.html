@@ -48,6 +48,14 @@
         </div>
     </div>
 
+    <div id="help-menu" class="hidden">
+        <p>The ocean can be split into distinct layers based on their depth. There are 5 layers in total, though for this quiz we're only going to be examining the three layers closest to the surface: the Epipelagic (Sunlight) Zone, Mesopelagic (Twilight) Zone, and Bathypelagic (Midnight) Zone. For each animal on this quiz, you'll have to guess which ocean layer they live in!</p>
+
+        <button id="continue">Continue</button>
+
+    </div>
+
+
 
     <main>
         <section id="info">
@@ -56,22 +64,23 @@
                 <div id="bar">
                     <div id="progress"></div>
                 </div>
+                <button id="help">?</button>
             </div>
 
             <div id="red">
                 <h2>Anglerfish</h2>
             </div>
 
-            <p>Drag & Drop to correct zone!</p>
+            <p id="instructions">Drag & Drop to correct zone!</p>
         </section>
 
-        <div id="drag1" class="draggable js-drag">
+        <div id="drag1" class="draggable js-drag" data-x="600" data-y="200">
             <img src="images/anglerfish.png" alt="anglerfish" width="308">
         </div>
-        <div id="drag2" class="draggable js-drag hidden">
+        <div id="drag2" class="draggable js-drag hidden" data-x="600" data-y="200">
             <img src="images/turtle.png" alt="sea turtle" width="308">
         </div>
-        <div id="drag3" class="draggable js-drag hidden">
+        <div id="drag3" class="draggable js-drag hidden" data-x="600" data-y="200">
             <img src="images/whale.png" alt="sperm whale" width="308">
         </div>
 
