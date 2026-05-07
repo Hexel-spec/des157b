@@ -41,10 +41,11 @@ h1 {
 }
 
 #progress {
-    width: 20%;
+    width: 0%;
     height: 20px;
     background-color: #164F65;
     border-radius: 25px 0 0 25px;
+    transition: all 1s;
 }
 
 h2 {
@@ -76,7 +77,22 @@ h2 {
     background: #ccc;
     border: 4px solid white;
     transition: background .15s linear, border-color .15s linear;
-    min-height: 200px;
+    min-height: 250px;
+}
+
+#drop1 {
+    background-color: #CEE9F3;
+    color: #6E9092;
+}
+
+#drop2 {
+    background-color: #70B7BC;
+    color: #164F65;
+}
+
+#drop3 {
+    background-color: #164F65;
+    color: #CEE9F3;
 }
 
 .draggable {
@@ -85,7 +101,7 @@ h2 {
     bottom: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
-    z-index: 10;
+    z-index: 5;
     /* width: 200px;
     margin: .25em;
     padding: 1em 2em;
@@ -105,4 +121,46 @@ footer {
     text-align: center;
     color: white;
     background-color: #164F65;
+    font-size: 0.5em;
+    padding: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+#dimmer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 8;
+    background-color: #10303d43;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border-radius: 50px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    color: white;
+    background-color: #164F65;
+    border-radius: 50px;
+    border: none;
+    padding: o.4em;
+    font-size: 0.8em;
 }
