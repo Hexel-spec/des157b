@@ -23,6 +23,7 @@ h1 {
     text-align: center;
 }
 
+
 #question {
     display: flex;
     align-items: center;
@@ -73,7 +74,35 @@ h2 {
     padding: 1em;
     text-align: center;
     background: #ccc;
-    line-height: 4em;
     border: 4px solid white;
     transition: background .15s linear, border-color .15s linear;
+    min-height: 200px;
+}
+
+.draggable {
+    /* position: relative; */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 10;
+    /* width: 200px;
+    margin: .25em;
+    padding: 1em 2em;
+    background-color: #29e;
+    color: #fff;
+    text-align: center; */
+
+    -ms-touch-action: none;
+        touch-action: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #164F65;
 }
