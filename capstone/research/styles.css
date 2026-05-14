@@ -16,3 +16,7 @@ h1 {
     padding-left: 2em;
     text-indent: -2em;
 }
+
+section {
+    margin-bottom: 2em;
+}
