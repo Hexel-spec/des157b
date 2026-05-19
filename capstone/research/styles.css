@@ -9,7 +9,7 @@ body {
 
 h1 {
     text-align: center;
-    margin: 2em;
+    margin: 1.5em;
 }
 
 .hanging-indent {
@@ -19,4 +19,15 @@ h1 {
 
 section {
     margin-bottom: 2em;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+table, th, td {
+  border:1px solid rgb(52, 63, 63);
+  padding: 0.4em;
 }
