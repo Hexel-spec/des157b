@@ -84,6 +84,20 @@ button {
     font-size: 1.2em;
 }
 
+
+.textbox {
+    display: flex;
+    align-items: center;
+    background-color: rgb(188, 223, 253);
+    width: 1000px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.textbox p {
+    margin-left: 1em;
+}
+
 #map { 
     position: absolute;
     /* width: 100vw;
