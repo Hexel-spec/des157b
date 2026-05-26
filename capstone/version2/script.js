@@ -67,24 +67,24 @@
     })
 
     // Maybe clean this up later
-    pin1.addEventListener('mouseover', function(){
-        popup1.className = 'popup showing'
-    })
-    pin2.addEventListener('mouseover', function(){
-        popup2.className = 'popup showing'
-    })
-    pin3.addEventListener('mouseover', function(){
-        popup3.className = 'popup showing'
-    })
-    pin1.addEventListener('mouseout', function(){
-        popup1.className = 'popup hidden'
-    })
-    pin2.addEventListener('mouseout', function(){
-        popup2.className = 'popup hidden'
-    })
-    pin3.addEventListener('mouseout', function(){
-        popup3.className = 'popup hidden'
-    })
+    // pin1.addEventListener('mouseover', function(){
+    //     popup1.className = 'popup showing'
+    // })
+    // pin2.addEventListener('mouseover', function(){
+    //     popup2.className = 'popup showing'
+    // })
+    // pin3.addEventListener('mouseover', function(){
+    //     popup3.className = 'popup showing'
+    // })
+    // pin1.addEventListener('mouseout', function(){
+    //     popup1.className = 'popup hidden'
+    // })
+    // pin2.addEventListener('mouseout', function(){
+    //     popup2.className = 'popup hidden'
+    // })
+    // pin3.addEventListener('mouseout', function(){
+    //     popup3.className = 'popup hidden'
+    // })
 
 
     pin1.addEventListener('click', function(){
