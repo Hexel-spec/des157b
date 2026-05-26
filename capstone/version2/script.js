@@ -2,8 +2,10 @@
     'use strict';
     console.log('reading js');
 
+    const body = document.querySelector('body');
     const startBtn = document.querySelector('#start');
     const backstoryNext = document.querySelector('#backstory-next')
+    const backBtn = document.querySelectorAll('.back')
     const startPage = document.querySelector('header');
     const backstory = document.querySelector('#backstory');
     const onboarding = document.querySelector('#onboarding');
@@ -27,6 +29,8 @@
         startPage.className = 'hidden';
         backstory.className = 'showing';
         b1.className = 'showing';
+        body.style.backgroundColor = 'rgb(48, 58, 60)'
+        body.style.backgroundImage = 'none'
     })
 
     // if (backstory.className === 'showing') {
@@ -86,6 +90,7 @@
     pin1.addEventListener('click', function(){
         locationSel.className = 'hidden'
         maldives.className = 'showing';
+        
     })
 
     pin2.addEventListener('click', function(){
@@ -97,5 +102,12 @@
         locationSel.className = 'hidden'
         dogen.className = 'showing';
     })
+    
+
+    // backBtn.forEach(element => {
+    //     element.addEventListener('click', function {
+            
+    //     })
+    // });
 
 })();
