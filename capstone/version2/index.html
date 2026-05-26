@@ -44,16 +44,17 @@
             <p id="b3" class="hidden">That's why the recent 'floating city' projects going up have caught your attention.</p>
         </div>
         <!-- <i class="fa-solid fa-computer-mouse"></i> -->
-        <button id="backstory-next">Next</button>
+        <button id="backstory-next" class="next">Next</button>
     </section>
 
     <section id="onboarding" class="hidden">
+        <div id="dimmer"></div>
         <img src="images/savvy.png" id=savvy alt="savvy the sea turtle" width="200">
         <div id='onboarding-textbox' class="textbox">
             <p>
                 Hi, I'm Savvy the Sea Turtle! I'm here to help you choose a floating city to live in!
             </p>
-            <i class="fa-solid fa-computer-mouse"></i>
+            <button type="button" id="onboarding-next" class="next">Next</button>
         </div>
     </section>
 
@@ -69,6 +70,8 @@
         </div>
          
         <h2>Choose a floating city to explore!</h2>
+        <button type="button" id=cancel class="hidden">Cancel</button>\
+        <button type="button" id="go" class="hidden">Go!</button>
     </section>
 
     <section id="maldives" class="hidden">

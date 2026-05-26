@@ -5,7 +5,10 @@
     const body = document.querySelector('body');
     const startBtn = document.querySelector('#start');
     const backstoryNext = document.querySelector('#backstory-next')
+    const onboardingNext = document.querySelector('#onboarding-next')
     const backBtn = document.querySelectorAll('.back')
+    const goBtn = document.querySelector('#go');
+    const cancelBtn = document.querySelector('#cancel')
     const startPage = document.querySelector('header');
     const backstory = document.querySelector('#backstory');
     const onboarding = document.querySelector('#onboarding');
@@ -16,14 +19,13 @@
     const b1 = document.querySelector('#b1');
     const b2 = document.querySelector('#b2');
     const b3 = document.querySelector('#b3');
-    // change this later
-    const textbox = document.querySelector('#onboarding-textbox')
     const pin1 = document.querySelector('#pin1');
     const pin2 = document.querySelector('#pin2');
     const pin3 = document.querySelector('#pin3');
-    const popup1 = document.querySelector('#popup1');
-    const popup2 = document.querySelector('#popup2');
-    const popup3 = document.querySelector('#popup3');
+    // const popup1 = document.querySelector('#popup1');
+    // const popup2 = document.querySelector('#popup2');
+    // const popup3 = document.querySelector('#popup3');
+    const mapHeader = document.querySelector('#location-select h2')
 
     startBtn.addEventListener('click', function(){
         startPage.className = 'hidden';
@@ -58,12 +60,12 @@
             } else {
                 backstory.className = 'hidden'
                 onboarding.className = 'showing'
+                locationSel.className = 'showing';
             }
         })
 
-    textbox.addEventListener('click', function(){
+    onboardingNext.addEventListener('click', function(){
         onboarding.className = 'hidden';
-        locationSel.className = 'showing';
     })
 
     // Maybe clean this up later
@@ -88,21 +90,29 @@
 
 
     pin1.addEventListener('click', function(){
-        locationSel.className = 'hidden'
-        maldives.className = 'showing';
-        
+        mapHeader.innerHTML = 'Would you like to travel to <strong>Maldives Floating City?</strong>'
+        goBtn.className = 'showing'
+        cancelBtn.className = 'showing'
     })
 
     pin2.addEventListener('click', function(){
-        locationSel.className = 'hidden'
-        oceanix.className = 'showing';
+        mapHeader.innerHTML = 'Would you like to travel to <strong>Oceanix Busan?</strong>'
+        goBtn.className = 'showing'
+        cancelBtn.className = 'showing'
     })
 
     pin3.addEventListener('click', function(){
-        locationSel.className = 'hidden'
-        dogen.className = 'showing';
+        mapHeader.innerHTML = 'Would you like to travel to  <strong>Dogen City?</strong>'
+        goBtn.className = 'showing'
+        cancelBtn.className = 'showing'        
     })
-    
+
+    cancelBtn.addEventListener('click', function(){
+        mapHeader.innerHTML = 'Choose a floating city to explore!'
+        goBtn.className = 'hidden'
+        cancelBtn.className = 'hidden'
+    })
+
 
     // backBtn.forEach(element => {
     //     element.addEventListener('click', function {
