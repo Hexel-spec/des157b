@@ -19,6 +19,9 @@
     const pin1 = document.querySelector('#pin1');
     const pin2 = document.querySelector('#pin2');
     const pin3 = document.querySelector('#pin3');
+    const popup1 = document.querySelector('#popup1');
+    const popup2 = document.querySelector('#popup2');
+    const popup3 = document.querySelector('#popup3');
 
     startBtn.addEventListener('click', function(){
         startPage.className = 'hidden';
@@ -59,8 +62,40 @@
         locationSel.className = 'showing';
     })
 
+    // Maybe clean this up later
     pin1.addEventListener('mouseover', function(){
-        d
+        popup1.className = 'popup showing'
+    })
+    pin2.addEventListener('mouseover', function(){
+        popup2.className = 'popup showing'
+    })
+    pin3.addEventListener('mouseover', function(){
+        popup3.className = 'popup showing'
+    })
+    pin1.addEventListener('mouseout', function(){
+        popup1.className = 'popup hidden'
+    })
+    pin2.addEventListener('mouseout', function(){
+        popup2.className = 'popup hidden'
+    })
+    pin3.addEventListener('mouseout', function(){
+        popup3.className = 'popup hidden'
+    })
+
+
+    pin1.addEventListener('click', function(){
+        locationSel.className = 'hidden'
+        maldives.className = 'showing';
+    })
+
+    pin2.addEventListener('click', function(){
+        locationSel.className = 'hidden'
+        oceanix.className = 'showing';
+    })
+
+    pin3.addEventListener('click', function(){
+        locationSel.className = 'hidden'
+        dogen.className = 'showing';
     })
 
 })();

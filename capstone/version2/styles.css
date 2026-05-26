@@ -150,6 +150,10 @@ button {
 .popup {
     font-size: 0.8em;
     position: absolute;
+    background-color: #57919cd6;
+    color: white;
+    padding: 0.4em;
+    border-radius: 5px;
 }
 
 #pin1 {
@@ -159,7 +163,7 @@ button {
 
 #popup1 {
     bottom: 120px;
-    left: 180px;
+    left: 140px;
 }
 
 #pin2 {
@@ -169,7 +173,7 @@ button {
 
 #popup2 {
     top: 230px;
-    right: 320px;
+    right: 280px;
 }
 
 
@@ -180,7 +184,7 @@ button {
 
 #popup3 {
     top: 260px;
-    right: 200px;
+    right: 180px;
 }
 
 
