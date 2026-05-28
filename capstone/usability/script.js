@@ -38,6 +38,12 @@
     const maldivesNext = document.querySelector('#maldives-next');
     const maldivesReturn = document.querySelector('#maldives-return');
 
+    //Oceanix dialogue
+    const oceanixResponse = document.querySelector('#responsebox-o')
+    const oceanixDialogue = document.querySelectorAll('#oceanix-intro p')
+    const oceanixNext = document.querySelector('#oceanix-next');
+    const oceanixReturn = document.querySelector('#oceanix-return');
+
     startBtn.addEventListener('click', function () {
         startPage.className = 'hidden';
         backstory.className = 'showing';
@@ -132,6 +138,7 @@
         if (selectedCity ===  'maldives') {
             locationSel.className = 'hidden';
             maldives.className = 'showing';
+            currentDialogue = maldivesDialogue;
         } else if (selectedCity === 'oceanix') {
             locationSel.className = 'hidden';
             oceanix.className = 'showing';
@@ -146,8 +153,6 @@
 
 
     // Maldives
-
-    currentDialogue = maldivesDialogue;
 
     document.querySelector('#maldives-next').addEventListener('click', function () {
         dialogueCount++
@@ -202,6 +207,60 @@
         
 
     })
+
+    // Oceanix
+    document.querySelector('#oceanix-next').addEventListener('click', function () {
+        dialogueCount++
+        changeText(dialogueCount, currentDialogue, oceanixResponse);
+    })
+
+    document.querySelector('#o1').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#oceanix-intro').className = 'hidden'
+        document.querySelectorAll('#oceanix-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#oceanix-q1').className = 'showing'
+        const md = document.querySelectorAll('#oceanix-q1 p');
+        currentDialogue = md;
+        changeText(dialogueCount, currentDialogue, oceanixResponse)
+    })
+
+    document.querySelector('#o2').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#oceanix-intro').className = 'hidden'
+        document.querySelectorAll('#oceanix-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#oceanix-q2').className = 'showing'
+        const md = document.querySelectorAll('#oceanix-q2 p');
+        currentDialogue = md;
+        changeText(dialogueCount, currentDialogue, oceanixResponse)
+    })
+
+    document.querySelector('#o3').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#oceanix-intro').className = 'hidden'
+        document.querySelectorAll('#oceanix-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#oceanix-q3').className = 'showing'
+        const md = document.querySelectorAll('#oceanix-q3 p');
+        currentDialogue = md;
+        changeText(dialogueCount, currentDialogue, oceanixResponse)
+    })
+
+    document.querySelector('#o4').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#oceanix-intro').className = 'hidden'
+        document.querySelectorAll('#oceanix-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#oceanix-q4 p').className = 'showing'
+        oceanixNext.className = 'hidden';
+        oceanixReturn.className = 'showing';
+    })
+
 
     function changeText(dialogueCount, text, response) {
         if (dialogueCount <= text.length-1) {

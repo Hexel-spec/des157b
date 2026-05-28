@@ -243,13 +243,14 @@ button:hover {
     right: 42%;
 }
 
-#maldives h2 {
+#maldives h2, #oceanix h2 {
     color: aliceblue;
-    font-size: 3em;
-    background-color: #41565b;
-    /* width: 800px;
-    height: 100px; */
-    padding: 1em;
+    font-size: 2em;
+    /* background-color: #41565b6f; */
+    /* width: 800px; */
+    /* height: 100px; */
+    /* padding: 1em; */
+    margin-left: 1em;
     /* filter: drop-shadow(5px 5px 2px rgb(123, 148, 150)) */
 }
 
