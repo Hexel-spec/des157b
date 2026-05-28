@@ -306,6 +306,7 @@
                 element.className = 'hidden';
             });
             locationSel.className = 'showing';
+            doneBtn.className = 'showing'
         })
     });
 
