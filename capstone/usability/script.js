@@ -145,10 +145,13 @@
         if (selectedCity ===  'maldives') {
             locationSel.className = 'hidden';
             maldives.className = 'showing';
+            document.querySelector('#maldives-intro').className = 'showing';
             currentDialogue = maldivesDialogue;
         } else if (selectedCity === 'oceanix') {
             locationSel.className = 'hidden';
             oceanix.className = 'showing';
+            document.querySelector('#oceanix-intro').className = 'showing';
+            currentDialogue = oceanixDialogue;
         } else if (selectedCity === 'dogen') {
             locationSel.className = 'hidden'
             dogen.className = 'showing';
