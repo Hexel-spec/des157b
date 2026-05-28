@@ -2,6 +2,10 @@
     'use strict';
     console.log('reading js');
 
+    //for usability test
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('#close');
+
     const body = document.querySelector('body');
     const startBtn = document.querySelector('#start');
     const backstoryNext = document.querySelector('#backstory-next')
@@ -43,6 +47,9 @@
     const oceanixDialogue = document.querySelectorAll('#oceanix-intro p')
     const oceanixNext = document.querySelector('#oceanix-next');
     const oceanixReturn = document.querySelector('#oceanix-return');
+
+    //Dogen dialogue
+    const dogenReturn = document.querySelector('#dogen-return');
 
     startBtn.addEventListener('click', function () {
         startPage.className = 'hidden';
@@ -290,5 +297,11 @@
 
     //     })
     // });
+
+    // for usability test
+    closeBtn.addEventListener('click', function(){
+        overlay.className = 'overlay hidden';
+    })
+    
 
 })();

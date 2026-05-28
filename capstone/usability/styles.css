@@ -298,3 +298,30 @@ button:hover {
 .hidden {
     display: none;
 }
+
+/* For usability test */
+
+.overlay {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    color: #41565b;
+    padding: 1em;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.overlay ol li {
+    margin-bottom: 1em;
+}
+
+.overlay button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
