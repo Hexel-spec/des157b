@@ -316,7 +316,7 @@
 
     document.querySelector('#choose form').addEventListener('submit', function(event){
         event.preventDefault();
-        document.querySelector('#choose h2').innerHTML = 'You made your choice! Work in progress :P'
+        document.querySelector('#choose h2').innerHTML = 'You made your choice! Work in progress :P Reload to restart'
     })
 
 
