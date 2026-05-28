@@ -12,7 +12,8 @@
     const onboardingNext = document.querySelector('#onboarding-next')
     const backBtn = document.querySelectorAll('.back')
     const goBtn = document.querySelector('#go');
-    const cancelBtn = document.querySelector('#cancel')
+    const cancelBtn = document.querySelector('#cancel');
+    const doneBtn = document.querySelector('#done')
     const returnBtns = document.querySelectorAll('.return')
     const startPage = document.querySelector('header');
     const backstory = document.querySelector('#backstory');
@@ -21,6 +22,7 @@
     const maldives = document.querySelector('#maldives');
     const oceanix = document.querySelector('#oceanix');
     const dogen = document.querySelector('#dogen')
+    const choose = document.querySelector('#choose')
     const b1 = document.querySelector('#b1');
     const b2 = document.querySelector('#b2');
     const b3 = document.querySelector('#b3');
@@ -90,6 +92,7 @@
 
     onboardingNext.addEventListener('click', function () {
         onboarding.className = 'hidden';
+        doneBtn.className = 'showing'
     })
 
     // Maybe clean this up later
@@ -117,6 +120,7 @@
         mapHeader.innerHTML = 'Would you like to travel to <strong>Maldives Floating City?</strong>'
         goBtn.className = 'showing'
         cancelBtn.className = 'showing'
+        doneBtn.className = 'hidden'
         selectedCity = 'maldives'
     })
 
@@ -124,6 +128,7 @@
         mapHeader.innerHTML = 'Would you like to travel to <strong>Oceanix Busan?</strong>'
         goBtn.className = 'showing'
         cancelBtn.className = 'showing'
+        doneBtn.className = 'hidden'
         selectedCity = 'oceanix'
     })
 
@@ -131,6 +136,7 @@
         mapHeader.innerHTML = 'Would you like to travel to  <strong>Dogen City?</strong>'
         goBtn.className = 'showing'
         cancelBtn.className = 'showing'
+        doneBtn.className = 'hidden'
         selectedCity = 'dogen'
     })
 
@@ -138,6 +144,7 @@
         mapHeader.innerHTML = 'Choose a floating city to explore!'
         goBtn.className = 'hidden'
         cancelBtn.className = 'hidden'
+        doneBtn.className = 'showing'
         selectedCity = 'none';
     })
 
@@ -147,11 +154,17 @@
             maldives.className = 'showing';
             document.querySelector('#maldives-intro').className = 'showing';
             currentDialogue = maldivesDialogue;
+            maldivesNext.className = 'showing'
+            maldivesReturn.className = 'hidden'
+            changeText(dialogueCount, currentDialogue, maldivesResponse);
         } else if (selectedCity === 'oceanix') {
             locationSel.className = 'hidden';
             oceanix.className = 'showing';
             document.querySelector('#oceanix-intro').className = 'showing';
             currentDialogue = oceanixDialogue;
+            oceanixNext.className = 'showing'
+            oceanixReturn.className = 'hidden'
+            changeText(dialogueCount, currentDialogue, oceanixResponse);
         } else if (selectedCity === 'dogen') {
             locationSel.className = 'hidden'
             dogen.className = 'showing';
@@ -211,6 +224,7 @@
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
             element.className = 'hidden'
         });
+        document.querySelector('#maldives-q4').className = 'showing';
         document.querySelector('#maldives-q4 p').className = 'showing'
         maldivesNext.className = 'hidden';
         maldivesReturn.className = 'showing';
@@ -266,6 +280,7 @@
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
             element.className = 'hidden'
         });
+        document.querySelector('#oceanix-q4').className = 'showing';
         document.querySelector('#oceanix-q4 p').className = 'showing'
         oceanixNext.className = 'hidden';
         oceanixReturn.className = 'showing';
@@ -293,6 +308,16 @@
             locationSel.className = 'showing';
         })
     });
+
+    doneBtn.addEventListener('click', function(){
+        locationSel.className = 'hidden';
+        choose.className = 'showing';
+    })
+
+    document.querySelector('#choose form').addEventListener('submit', function(event){
+        event.preventDefault();
+        document.querySelector('#choose h2').innerHTML = 'You made your choice! Work in progress :P'
+    })
 
 
     // backBtn.forEach(element => {

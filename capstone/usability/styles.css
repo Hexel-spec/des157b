@@ -223,7 +223,7 @@ button:hover {
     right: 170px;
 }
 
-#go, #cancel {
+#go, #cancel, #done {
     position: absolute;
 }
 
@@ -241,6 +241,12 @@ button:hover {
 #go {
     top: 10%;
     right: 42%;
+}
+
+#done {
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 #maldives h2, #oceanix h2 {
@@ -327,5 +333,9 @@ button:hover {
 }
 
 #dogen {
+    color: aliceblue;
+}
+
+#choose {
     color: aliceblue;
 }

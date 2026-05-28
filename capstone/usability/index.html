@@ -31,6 +31,7 @@
             <li>Navigate to the Map View (location selection)</li>
             <li>Explore Maldives Floating City, and ask at least one question before returning to the map</li>
             <li>Explore Oceanix Busan, and ask at least one question before returning to the map</li>
+            <li>Click done exploring to choose a city to live in (styling is still a work in progress)</li>
         </ol>
         <button type="button" id="close">Close</button>
     </div>
@@ -82,8 +83,9 @@
         </div>
          
         <h2>Choose a floating city to explore!</h2>
-        <button type="button" id=cancel class="hidden">Cancel</button>\
+        <button type="button" id=cancel class="hidden">Cancel</button>
         <button type="button" id="go" class="hidden">Go!</button>
+        <button type="button" id="done" class="hidden">Done Exploring</button>
     </section>
 
     <section id="loading-screen" class="hidden">
@@ -174,7 +176,7 @@
             </section>
 
             <section id="oceanix-q4">
-                <p class="hidden">Thank you for visiting Maldives Floating City! We hope you choose to stay with us!</p>
+                <p class="hidden">Thank you for visiting Oceanix Busan! We hope you choose to stay with us!</p>
             </section>
 
             <button id="oceanix-next">Next</button>
@@ -193,6 +195,22 @@
         <h2>Dogen City</h2>
         <p>under construction</p>
         <button id="dogen-return" class="return">Return</button>
+    </section>
+
+    <section id="choose" class="hidden">
+        <h2>Choose a city to live in! (Work in Progress)</h2>
+        <form>
+            <input type="radio" id="maldives" name="choose" value="maldives" />
+            <label for="maldives">Maldives Floating City</label>
+
+            <input type="radio" id="oceanix" name="choose" value="oceanix" />
+            <label for="oceanix">Oceanix Busan</label>
+
+            <input type="radio" id="dogen" name="choose" value="dogen"/>
+            <label for="dogen">Dogen City</label>
+
+            <input type="submit">
+        </form>
     </section>
 </body>
 </html>
