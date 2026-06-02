@@ -249,7 +249,7 @@ button:hover {
     transform: translate(-50%);
 }
 
-#maldives h2, #oceanix h2 {
+#maldives h2, #oceanix h2, #dogen h2 {
     color: aliceblue;
     font-size: 2em;
     /* background-color: #41565b6f; */
@@ -280,7 +280,7 @@ button:hover {
     justify-content: center;
     width: 400px;
     height: 300px;
-    background-color: rgb(133, 135, 136);
+    background-color: rgb(182, 175, 194);
     color: #41565b;
     bottom: 30%;
     right: 10%;
@@ -307,7 +307,7 @@ button:hover {
 
 /* For usability test */
 
-.overlay {
+/* .overlay {
     position: absolute;
     width: 500px;
     height: 400px;
@@ -338,4 +338,4 @@ button:hover {
 
 #choose {
     color: aliceblue;
-}
+} */

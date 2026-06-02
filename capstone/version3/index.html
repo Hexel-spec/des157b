@@ -24,7 +24,7 @@
 <body>
 
     <!-- // ONLY for usability Test -->
-    <div class="overlay">
+    <!-- <div class="overlay">
         <h2>Welcome to the usability test for Seabnb! Here are 3 tasks you should perform:</h2>
 
         <ol>
@@ -34,7 +34,7 @@
             <li>Click done exploring to choose a city to live in (styling is still a work in progress)</li>
         </ol>
         <button type="button" id="close">Close</button>
-    </div>
+    </div> -->
     
 
     <header class="showing">
@@ -193,8 +193,55 @@
 
     <section id="dogen" class="hidden">
         <h2>Dogen City</h2>
-        <p>under construction</p>
-        <button id="dogen-return" class="return">Return</button>
+        <!-- background img here -->
+
+        <div id="dogen-textbox" class="textbox city">
+            <section id="dogen-intro">
+                <p>Hello, it's nice to meet you! Allow me to speak about Dogen City.</p>
+                <p class="hidden">Dogen City is a Japanese “smart healthcare city” developed by N-ARK.  It is 1.58 km (0.98 miles) and 4 km (2.46 miles) in circumference, housing about 10,000 residents in total.</p>
+                <p class="hidden">Dogen City is made up of three primary infrastructures: the Habitable Ring, Autonomous Floating Architecture, and the Undersea Data Center</p>
+                <p class="hidden">The first infrastructure, the Habitable Ring, forms a circular barrier around the city and is the main location for public housing for its residents.</p>
+                <p class="hidden">The second is the Autonomous Floating Architecture that can move and reconfigure themselves freely to meet on-demand adaptations.</p>
+                <p class="hidden">The third is Undersea Data Center, which provides the city OS as well as healthcare data and drug discovery simulation.</p>
+                <p class="hidden">As a smart healthcare city, Dogen City’s primary focus is to do health and medicine research, but acts as a stand-alone city in the event of a natural disaster.</p>
+                <p class="hidden">If you have any questions, feel free to ask them now!</p>
+            </section>
+
+            <section id="dogen-q1" class="question">
+                <p class="hidden">The Habitable Ring goes around the circumference of the city. It has a levee function that acts as a barrier against tsunamis all around the city, protecting the people and infrastructure inside.</p>
+                <p class="hidden">Public housing is located above and below the water’s surface, with a walkway also being located above the water’s surface.</p>
+                <p class="hidden">Do you have any other questions?</p>
+            </section>
+
+            <section id="dogen-q2" class="question">
+                <p class="hidden">The inner city has floating facilities for food production, as well as research and development labs, schools, security centers, offices, food and drink shops, and merch shops</p>
+                <p class="hidden">It has a few parks and mobile islands, a stadium, and a multitude of residential hotels. There are ships available for transporting people to and from these facilities. </p>
+                <p class="hidden">Do you have any other questions?</p>
+            </section>
+
+            <section id="dogen-q3" class="question">
+                <p class="hidden">Dogen City uses aquaponics to grow vegetables on the water, using humidity to reproduce a soil environment, and seawater as a source of nutrients. The city can produce 6,862 tons of food annually.</p>
+                <p class="hidden">The city uses renewable energy such as solar panels and wind turbines above the water’s surface to generate 22,265,000 kW of electricity per year.</p>
+                <p class="hidden">Do you have any other questions?</p>
+            </section>
+
+            <section id="dogen-q4">
+                <p class="hidden">Thank you for visiting Oceanix Busan! We hope you choose to stay with us!</p>
+            </section>
+
+            <button id="dogen-next">Next</button>
+            <button id="dogen-return" class="return hidden">Return</button>
+        </div>
+        <div id="responsebox-d" class="response hidden">
+            <button type="button" id="d1">How is the city protected from tides and storms?</button>
+            <button type="button" id="d2">Where will food, energy, and other resources come from?</button>
+            <button type="button" id="d3">How will the city limit its environmental impact?</button>
+            <!-- <button type="button"></button> -->
+            <button type="button" id="d4">No further questions</button>
+        </div>
+    </section>
+
+        
     </section>
 
     <section id="choose" class="hidden">

@@ -51,6 +51,9 @@
     const oceanixReturn = document.querySelector('#oceanix-return');
 
     //Dogen dialogue
+    const dogenResponse = document.querySelector('#responsebox-d')
+    const dogenDialogue = document.querySelectorAll('#dogen-intro p')
+    const dogenNext = document.querySelector('#dogen-next');
     const dogenReturn = document.querySelector('#dogen-return');
 
     startBtn.addEventListener('click', function () {
@@ -168,6 +171,11 @@
         } else if (selectedCity === 'dogen') {
             locationSel.className = 'hidden'
             dogen.className = 'showing';
+            document.querySelector('#dogen-intro').className = 'showing';
+            currentDialogue = dogenDialogue;
+            dogenNext.className = 'showing'
+            dogenReturn.className = 'hidden'
+            changeText(dialogueCount, currentDialogue, dogenResponse);
         }
         mapHeader.innerHTML = 'Choose a floating city to explore!'
         goBtn.className = 'hidden'
@@ -284,6 +292,60 @@
         document.querySelector('#oceanix-q4 p').className = 'showing'
         oceanixNext.className = 'hidden';
         oceanixReturn.className = 'showing';
+    })
+
+    // Dogen
+    document.querySelector('#dogen-next').addEventListener('click', function () {
+        dialogueCount++
+        changeText(dialogueCount, currentDialogue, dogenResponse);
+    })
+
+    document.querySelector('#d1').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#dogen-intro').className = 'hidden'
+        document.querySelectorAll('#dogen-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#dogen-q1').className = 'showing'
+        const md = document.querySelectorAll('#dogen-q1 p');
+        currentDialogue = md;
+        changeText(dialogueCount, currentDialogue, dogenResponse)
+    })
+
+    document.querySelector('#d2').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#dogen-intro').className = 'hidden'
+        document.querySelectorAll('#dogen-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#dogen-q2').className = 'showing'
+        const md = document.querySelectorAll('#dogen-q2 p');
+        currentDialogue = md;
+        changeText(dialogueCount, currentDialogue, dogenResponse)
+    })
+
+    document.querySelector('#d3').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#dogen-intro').className = 'hidden'
+        document.querySelectorAll('#dogen-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#dogen-q3').className = 'showing'
+        const md = document.querySelectorAll('#dogen-q3 p');
+        currentDialogue = md;
+        changeText(dialogueCount, currentDialogue, dogenResponse)
+    })
+
+    document.querySelector('#d4').addEventListener('click', function(){
+        dialogueCount = 0;
+        document.querySelector('#dogen-intro').className = 'hidden'
+        document.querySelectorAll('#dogen-textbox section').forEach(element => {
+            element.className = 'hidden'
+        });
+        document.querySelector('#dogen-q4').className = 'showing';
+        document.querySelector('#dogen-q4 p').className = 'showing'
+        dogenNext.className = 'hidden';
+        dogenReturn.className = 'showing';
     })
 
 
