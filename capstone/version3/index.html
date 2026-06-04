@@ -19,25 +19,26 @@
 
     <!-- javascript librarires here -->
 
+    <!-- Granim - Animated Gradients -->
+    <script src="granim.min.js"></script>3
+    
+    <!-- <script src="particles.js"></script> -->
+    <script src="app.js"></script>
+
     <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- // ONLY for usability Test -->
-    <!-- <div class="overlay">
-        <h2>Welcome to the usability test for Seabnb! Here are 3 tasks you should perform:</h2>
-
-        <ol>
-            <li>Navigate to the Map View (location selection)</li>
-            <li>Explore Maldives Floating City, and ask at least one question before returning to the map</li>
-            <li>Explore Oceanix Busan, and ask at least one question before returning to the map</li>
-            <li>Click done exploring to choose a city to live in (styling is still a work in progress)</li>
-        </ol>
-        <button type="button" id="close">Close</button>
-    </div> -->
+    <!-- particles.js container -->
+    <div id="particles-js"></div> <!-- stats - count particles -->
+    <!-- <div class="count-particles"> <span class="js-count-particles">--</span> particles </div> particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     
 
     <header class="showing">
+        <!-- <canvas id="canvas-basic"></canvas> -->
+        <img src="images/seabnb-logo.png" id="logo" alt="seabnb-logo" width="150">
         <h1>Seabnb</h1>
         <h2>Explore and Rate Floating Cities!</h2>
         <button type="button" id="start">START</button>

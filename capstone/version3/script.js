@@ -56,6 +56,21 @@
     const dogenNext = document.querySelector('#dogen-next');
     const dogenReturn = document.querySelector('#dogen-return');
 
+    // const granimInstance = new Granim({
+    //     element: '#canvas-basic',
+    //     direction: 'top-bottom',
+    //     isPausedWhenNotInView: true,
+    //     states: {
+    //         "default-state": {
+    //             gradients: [
+    //                 ['#59c1bf', '#EEE5C2'],
+    //                 ['#61F3C4', '#336771'],
+    //                 ['#F9ABFF', '#472773']
+    //             ]
+    //         }
+    //     }
+    // });
+
     startBtn.addEventListener('click', function () {
         startPage.className = 'hidden';
         backstory.className = 'showing';
@@ -152,7 +167,7 @@
     })
 
     goBtn.addEventListener('click', function () {
-        if (selectedCity ===  'maldives') {
+        if (selectedCity === 'maldives') {
             locationSel.className = 'hidden';
             maldives.className = 'showing';
             document.querySelector('#maldives-intro').className = 'showing';
@@ -190,7 +205,7 @@
         changeText(dialogueCount, currentDialogue, maldivesResponse);
     })
 
-    document.querySelector('#m1').addEventListener('click', function(){
+    document.querySelector('#m1').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -202,7 +217,7 @@
         changeText(dialogueCount, currentDialogue, maldivesResponse)
     })
 
-    document.querySelector('#m2').addEventListener('click', function(){
+    document.querySelector('#m2').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -214,7 +229,7 @@
         changeText(dialogueCount, currentDialogue, maldivesResponse)
     })
 
-    document.querySelector('#m3').addEventListener('click', function(){
+    document.querySelector('#m3').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -226,7 +241,7 @@
         changeText(dialogueCount, currentDialogue, maldivesResponse)
     })
 
-    document.querySelector('#m4').addEventListener('click', function(){
+    document.querySelector('#m4').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -236,7 +251,7 @@
         document.querySelector('#maldives-q4 p').className = 'showing'
         maldivesNext.className = 'hidden';
         maldivesReturn.className = 'showing';
-        
+
 
     })
 
@@ -246,7 +261,7 @@
         changeText(dialogueCount, currentDialogue, oceanixResponse);
     })
 
-    document.querySelector('#o1').addEventListener('click', function(){
+    document.querySelector('#o1').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -258,7 +273,7 @@
         changeText(dialogueCount, currentDialogue, oceanixResponse)
     })
 
-    document.querySelector('#o2').addEventListener('click', function(){
+    document.querySelector('#o2').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -270,7 +285,7 @@
         changeText(dialogueCount, currentDialogue, oceanixResponse)
     })
 
-    document.querySelector('#o3').addEventListener('click', function(){
+    document.querySelector('#o3').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -282,7 +297,7 @@
         changeText(dialogueCount, currentDialogue, oceanixResponse)
     })
 
-    document.querySelector('#o4').addEventListener('click', function(){
+    document.querySelector('#o4').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -300,7 +315,7 @@
         changeText(dialogueCount, currentDialogue, dogenResponse);
     })
 
-    document.querySelector('#d1').addEventListener('click', function(){
+    document.querySelector('#d1').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -312,7 +327,7 @@
         changeText(dialogueCount, currentDialogue, dogenResponse)
     })
 
-    document.querySelector('#d2').addEventListener('click', function(){
+    document.querySelector('#d2').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -324,7 +339,7 @@
         changeText(dialogueCount, currentDialogue, dogenResponse)
     })
 
-    document.querySelector('#d3').addEventListener('click', function(){
+    document.querySelector('#d3').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -336,7 +351,7 @@
         changeText(dialogueCount, currentDialogue, dogenResponse)
     })
 
-    document.querySelector('#d4').addEventListener('click', function(){
+    document.querySelector('#d4').addEventListener('click', function () {
         dialogueCount = 0;
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -350,20 +365,20 @@
 
 
     function changeText(dialogueCount, text, response) {
-        if (dialogueCount <= text.length-1) {
+        if (dialogueCount <= text.length - 1) {
             response.className = 'response hidden'
             text.forEach(element => {
                 element.className = 'hidden'
             });
             text[dialogueCount].className = 'showing'
-        } else if (dialogueCount > text.length-1) {
+        } else if (dialogueCount > text.length - 1) {
             response.className = 'response';
         }
 
     }
 
     returnBtns.forEach(btn => {
-        btn.addEventListener('click', function(){
+        btn.addEventListener('click', function () {
             document.querySelectorAll('section').forEach(element => {
                 element.className = 'hidden';
             });
@@ -372,12 +387,12 @@
         })
     });
 
-    doneBtn.addEventListener('click', function(){
+    doneBtn.addEventListener('click', function () {
         locationSel.className = 'hidden';
         choose.className = 'showing';
     })
 
-    document.querySelector('#choose form').addEventListener('submit', function(event){
+    document.querySelector('#choose form').addEventListener('submit', function (event) {
         event.preventDefault();
         document.querySelector('#choose h2').innerHTML = 'You made your choice! Work in progress :P Reload to restart'
     })
@@ -390,9 +405,83 @@
     // });
 
     // for usability test
-    closeBtn.addEventListener('click', function(){
-        overlay.className = 'overlay hidden';
-    })
-    
+    // closeBtn.addEventListener('click', function(){
+    //     overlay.className = 'overlay hidden';
+    // })
+
+    particlesJS("particles-js", {
+        particles: {
+            number: { value: 38, density: { enable: true, value_area: 800 } },
+            color: { value: "#c6c9de" },
+            shape: {
+                type: "circle",
+                stroke: { width: 2, color: "#969eb8" },
+                polygon: { nb_sides: 6 },
+                image: { src: "img/github.svg", width: 100, height: 100 }
+            },
+            opacity: {
+                value: 0.3,
+                random: true,
+                anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+            },
+            size: {
+                value: 47.980807676929246,
+                random: true,
+                anim: { enable: true, speed: 10, size_min: 40, sync: false }
+            },
+            line_linked: {
+                enable: false,
+                distance: 200,
+                color: "#ffffff",
+                opacity: 1,
+                width: 2
+            },
+            move: {
+                enable: true,
+                speed: 5,
+                direction: "top",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: { enable: false, rotateX: 600, rotateY: 1200 }
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { enable: false, mode: "grab" },
+                onclick: { enable: false, mode: "push" },
+                resize: true
+            },
+            modes: {
+                grab: { distance: 400, line_linked: { opacity: 1 } },
+                bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                repulse: { distance: 200, duration: 0.4 },
+                push: { particles_nb: 4 },
+                remove: { particles_nb: 2 }
+            }
+        },
+        retina_detect: true
+    });
+    var count_particles, stats, update;
+    stats = new Stats();
+    stats.setMode(0);
+    stats.domElement.style.position = "absolute";
+    stats.domElement.style.left = "0px";
+    stats.domElement.style.top = "0px";
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector(".js-count-particles");
+    update = function () {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+            count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+
+
 
 })();
