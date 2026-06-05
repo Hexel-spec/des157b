@@ -1,0 +1,275 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: aliceblue;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  margin: 0;
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 1200px;
+  height: 750px;
+}
+
+
+
+header {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  margin: auto;
+  padding: 0;
+}
+
+h1 {
+  font-size: 5em;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+button {
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#start {
+  padding: 0.5em 1.5em 0.5em 1.5em;
+  font-size: 2em;
+  font-weight: 600;
+  color: aliceblue;
+  background-color: rgb(239, 104, 41);
+  border-radius: 0.5em;
+  transition: all 0.5s ease;
+}
+
+#start:hover {
+    background-color: rgb(84, 44, 11);
+}
+
+#box {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  border: 10px ridge aliceblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 600px;
+  z-index: -3;
+}
+
+.textbox {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%);
+  color: aliceblue;
+  background-color: #1b1b1eee;
+  padding: 0 1.2em 0 1.2em;
+  width: 900px;
+  height: 150px;
+}
+
+.textbox p {
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+.textbox .fa-computer-mouse {
+  position: absolute; 
+  font-size: 1.5em;
+  bottom: 20px;
+  right: 20px;
+  animation: mouse 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes mouse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+#location-select h2 {
+  color: rgb(48, 58, 60);
+  text-align: center;
+}
+
+#location-select:hover {
+  cursor: crosshair;
+}
+
+.fa-location-pin {
+    font-size: 24px;
+    color: rgb(49, 60, 60);
+    transition: all 0.5s;
+}
+
+.fa-location-pin:hover {
+    transform: scale(2);
+    color: rgb(239, 104, 41);
+    cursor: pointer;
+}
+
+.popup {
+    font-size: 0.8em;
+    /* position: absolute; */
+    background-color: #57919cd6;
+    color: white;
+    padding: 0.4em;
+    border-radius: 5px;
+}
+
+.popup:hover {
+  cursor: pointer;
+}
+
+#location-select div {
+  position: absolute;
+  text-align: center;
+}
+
+
+#pin1 {
+    bottom: 80px;
+    left: 80px;
+}
+
+/* #popup1 {
+    bottom: 120px;
+    left: 120px;
+} */
+
+#pin2 {
+    top: 200px;
+    right: 220px;
+}
+
+/* #popup2 {
+    top: 210px;
+    right: 280px;
+} */
+
+
+#pin3 {
+    top: 230px;
+    right: 150px;
+}
+
+/* #popup3 {
+    top: 240px;
+    right: 170px;
+} */
+
+.showing {
+  display: block;
+  opacity: 1;
+  /* transform: scale(1); */
+
+  
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  /* transform: scale(0.9); */
+  
+  /* 2. Transition Settings */
+  transition: 
+    opacity 0.3s ease, 
+    display 0.3s ease allow-discrete;
+}
+
+
+
+/* particles js */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2c2e43;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: -5;
+}
+
+/* ---- stats.js ---- */
+.count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.js-count-particles {
+  font-size: 1.1em;
+}
+
+#stats,
+.count-particles {
+  /* -webkit-user-select: none; */
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.count-particles {
+  border-radius: 0 0 3px 3px;
+}

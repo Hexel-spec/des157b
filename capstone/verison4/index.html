@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seabnb</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- css libraries here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- javascript librarires here -->
+
+    <!-- Granim - Animated Gradients
+    <script src="granim.min.js"></script> -->
+
+    <!-- <script src="particles.js"></script> -->
+    <script src="app.js"></script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div> <!-- stats - count particles -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+    <div id="container">
+        <header class="showing">
+            <img src="images/seabnb-logo.png" id="logo" alt="seabnb-logo" width="150">
+            <h1>Seabnb</h1>
+            <h2>Explore and Rate Floating Cities!</h2>
+            <button type="button" id="start">START</button>
+        </header>
+
+        <div id="box" class="hidden">
+            <section id="onboarding" class="hidden">
+                <div>
+                    <img src="images/peaceful.png" id="peaceful" alt="peaceful">
+                </div>
+                <div class="textbox">
+                    <p>Hello, and welcome to the beta test for Seabnb, the online rating platform for floating cities!
+                        I'm Savvy the Sea Turtle, and I'll be assisting you on your journey today!</p>
+                    <p class="hidden">In the near future, sea levels will rise due to climate change and cause many
+                        coastal areas to become inhabitable, displacing a multitude of coastal communities.</p>
+                    <p class="hidden">Floating city projects have emerged as an answer to this crisis, claiming to allow
+                        those that have been displaced (and anyone else who is interest) a safe and comfortable home.
+                    </p>
+                    <p class="hidden">Seabnb aims to allow people to make informed decisions about living in floating
+                        cities, which is why we're asking you to explore these floating cities and form your own
+                        conclusions</p>
+                    <p class="hidden">You've been tasked with visiting three different floating cities: <strong>Maldives
+                            Floating City</strong> in Maldvies, <strong>Oceanix Busan in South Korea,</strong> and
+                        <strong>Dogen City in Japan</strong>. We wish you good luck on your journeys!</p>
+                    <i class="fa-solid fa-computer-mouse"></i>
+                </div>
+            </section>
+
+            <section id="location-select" class="hidden">
+                <img src="images/map.png" id="map" alt="map">
+                <h2>Choose a Floating City!</h2>
+                <div id="pin1">
+                    <i class="fa-solid fa-location-pin"></i>
+                    <p id="popup1" class="popup">Maldives Floating City</p>
+                </div>
+                <div id="pin2">
+                    <i class="fa-solid fa-location-pin"></i>
+                    <p id="popup2" class="popup">Oceanix Busan</p>
+                </div>
+                <div id="pin3">
+                    <i class="fa-solid fa-location-pin"></i>
+                    <p id="popup3" class="popup">Dogen City</p>
+                </div>
+                
+                
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

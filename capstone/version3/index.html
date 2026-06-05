@@ -20,7 +20,7 @@
     <!-- javascript librarires here -->
 
     <!-- Granim - Animated Gradients -->
-    <script src="granim.min.js"></script>3
+    <script src="granim.min.js"></script>
     
     <!-- <script src="particles.js"></script> -->
     <script src="app.js"></script>
@@ -31,7 +31,6 @@
 
     <!-- particles.js container -->
     <div id="particles-js"></div> <!-- stats - count particles -->
-    <!-- <div class="count-particles"> <span class="js-count-particles">--</span> particles </div> particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
     <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     
@@ -42,8 +41,9 @@
         <h1>Seabnb</h1>
         <h2>Explore and Rate Floating Cities!</h2>
         <button type="button" id="start">START</button>
-        <button type="button" id="fyi">i</button>
+        <!-- <button type="button" id="fyi">i</button> -->
     </header>
+    
     
 
     <section id="backstory" class="hidden">
@@ -52,16 +52,19 @@
         <div id="slideshow">
             <img src="images/oceanstorm.png" alt="ocean storm">
         </div>
-        <div >
-            <p id="b1" class="hidden">Since you were a child, living near the ocean meant the world to you.</p>
-            <p id="b2" class="hidden">But with rising sea tides and worsening weather, it's been risky to live near the ocean.</p>
-            <p id="b3" class="hidden">That's why the recent 'floating city' projects going up have caught your attention.</p>
+        <div class="textbox">
+            <div>
+                <p id="b1" class="hidden backstory">Hello, and welcome to the beta test for Seabnb, the online rating platform for floating cities!</p>
+                <p id="b2" class="hidden backstory">Ever since sea levels have risen due to climate change, multiple 'floating city' projects to create more habitable space for people.</p>
+                <p id="b3" class="hidden backstory">Seabnb aims to allow people to make informed decisions about living in floating cities, which is why we're asking you to explore these floating cities and express your own thoughts.</p>
+            </div>
+            <button id="backstory-next" class="next">Next</button>
         </div>
         <!-- <i class="fa-solid fa-computer-mouse"></i> -->
-        <button id="backstory-next" class="next">Next</button>
+
     </section>
 
-    <section id="onboarding" class="hidden">
+    <!-- <section id="onboarding" class="hidden">
         <div id="dimmer"></div>
         <img src="images/savvy.png" id=savvy alt="savvy the sea turtle" width="200">
         <div id='onboarding-textbox' class="textbox">
@@ -70,7 +73,7 @@
             </p>
             <button type="button" id="onboarding-next" class="next">Next</button>
         </div>
-    </section>
+    </section> -->
 
     <section id="location-select" class="hidden">
         <div id="map">
@@ -84,9 +87,9 @@
         </div>
          
         <h2>Choose a floating city to explore!</h2>
-        <button type="button" id=cancel class="hidden">Cancel</button>
-        <button type="button" id="go" class="hidden">Go!</button>
-        <button type="button" id="done" class="hidden">Done Exploring</button>
+        <!-- <button type="button" id=cancel class="hidden">Cancel</button>
+        <button type="button" id="go" class="hidden">Go!</button> -->
+        <button type="button" id="done" class="hidden">Done Exploring?</button>
     </section>
 
     <section id="loading-screen" class="hidden">
@@ -94,8 +97,13 @@
     </section>
 
     <section id="maldives" class="hidden">
+
         <h2>Maldives Floating City</h2>
-        <img src="images/maldives.jpg" alt="maldives" class="background">
+        
+        <div class="background">
+            <img src="images/maldives_overlook.jpg" alt="maldives" alt="maldives-image" width="1000">
+        </div>
+        
         <div id="maldives-textbox" class="textbox city">
             <section id="maldives-intro">
                 <p>Hello, and welcome to Maldives Floating City! Thank you for coming all this way, allow me to give a brief introduction of the city and all its features.</p>

@@ -17,6 +17,7 @@
     const returnBtns = document.querySelectorAll('.return')
     const startPage = document.querySelector('header');
     const backstory = document.querySelector('#backstory');
+    const backstoryTextbox = document.querySelector('#backstory .textbox');
     const onboarding = document.querySelector('#onboarding');
     const locationSel = document.querySelector('#location-select');
     const maldives = document.querySelector('#maldives');
@@ -75,23 +76,20 @@
         startPage.className = 'hidden';
         backstory.className = 'showing';
         b1.className = 'showing';
-        body.style.backgroundColor = 'rgb(48, 58, 60)'
-        body.style.backgroundImage = 'none'
+        // typeWriter(b1, backstoryTextbox);
+        // body.style.backgroundColor = 'rgb(48, 58, 60)'
+        // body.style.backgroundImage = 'none'
     })
 
-    // if (backstory.className === 'showing') {
-    //     window.addEventListener('click', function(){
-    //         if(b1.className === 'showing'){
-    //             b1.className = 'hidden';
-    //             b2.className = 'showing';
-    //         } else if (b2.className === 'showing') {
-    //             b2.className = 'hidden';
-    //             b3.className = 'showing';
-    //         } else {
-    //             backstory.className = 'hidden'
-    //             onboarding.className = 'showing'
-    //         }
-    //     })
+    // function typeWriter(text, container) {
+    //     // text.className = 'showing'
+    //     let i = 0;
+    //     const speed = 50;
+    //     if (i < text.length) {
+    //         container.innerHTML += txt.charAt(i);
+    //         i++;
+    //         setTimeout(typeWriter, speed);
+    //     }
     // }
 
     backstoryNext.addEventListener('click', function () {
@@ -103,110 +101,124 @@
             b3.className = 'showing';
         } else {
             backstory.className = 'hidden'
-            onboarding.className = 'showing'
+            // onboarding.className = 'showing'
             locationSel.className = 'showing';
         }
+        // const backstoryDialogue = document.querySelectorAll('.backstory');
+        // if (dialogueCount <= backstoryDialogue.length) {
+        //     backstoryDialogue.forEach(element => {
+        //         element.className = 'hidden'
+        //     });
+        //     backstoryDialogue[dialogueCount].className = 'showing'
+        // } else if (dialogueCount > backstoryDialogue.length) {
+        //     dialogueCount = 0;
+        //     backstory.className = 'hidden'
+        //     locationSel.className = 'showing';
+        // }
+
     })
 
-    onboardingNext.addEventListener('click', function () {
-        onboarding.className = 'hidden';
-        doneBtn.className = 'showing'
-    })
-
-    // Maybe clean this up later
-    // pin1.addEventListener('mouseover', function(){
-    //     popup1.className = 'popup showing'
-    // })
-    // pin2.addEventListener('mouseover', function(){
-    //     popup2.className = 'popup showing'
-    // })
-    // pin3.addEventListener('mouseover', function(){
-    //     popup3.className = 'popup showing'
-    // })
-    // pin1.addEventListener('mouseout', function(){
-    //     popup1.className = 'popup hidden'
-    // })
-    // pin2.addEventListener('mouseout', function(){
-    //     popup2.className = 'popup hidden'
-    // })
-    // pin3.addEventListener('mouseout', function(){
-    //     popup3.className = 'popup hidden'
+    // onboardingNext.addEventListener('click', function () {
+    //     onboarding.className = 'hidden';
+    //     doneBtn.className = 'showing'
     // })
 
 
     pin1.addEventListener('click', function () {
-        mapHeader.innerHTML = 'Would you like to travel to <strong>Maldives Floating City?</strong>'
-        goBtn.className = 'showing'
-        cancelBtn.className = 'showing'
-        doneBtn.className = 'hidden'
-        selectedCity = 'maldives'
+        // mapHeader.innerHTML = 'Would you like to travel to <strong>Maldives Floating City?</strong>'
+        // goBtn.className = 'showing'
+        // cancelBtn.className = 'showing'
+        // doneBtn.className = 'hidden'
+        // selectedCity = 'maldives'
+        locationSel.className = 'hidden';
+        maldives.className = 'showing';
+        document.querySelector('#maldives-intro').className = 'showing';
+        currentDialogue = maldivesDialogue;
+        maldivesNext.className = 'showing'
+        maldivesReturn.className = 'hidden'
+        changeText(dialogueCount, currentDialogue, maldivesResponse);
     })
 
     pin2.addEventListener('click', function () {
-        mapHeader.innerHTML = 'Would you like to travel to <strong>Oceanix Busan?</strong>'
-        goBtn.className = 'showing'
-        cancelBtn.className = 'showing'
-        doneBtn.className = 'hidden'
-        selectedCity = 'oceanix'
+        // mapHeader.innerHTML = 'Would you like to travel to <strong>Oceanix Busan?</strong>'
+        // goBtn.className = 'showing'
+        // cancelBtn.className = 'showing'
+        // doneBtn.className = 'hidden'
+        // selectedCity = 'oceanix'
+        locationSel.className = 'hidden';
+        oceanix.className = 'showing';
+        document.querySelector('#oceanix-intro').className = 'showing';
+        currentDialogue = oceanixDialogue;
+        oceanixNext.className = 'showing'
+        oceanixReturn.className = 'hidden'
+        changeText(dialogueCount, currentDialogue, oceanixResponse);
     })
 
     pin3.addEventListener('click', function () {
-        mapHeader.innerHTML = 'Would you like to travel to  <strong>Dogen City?</strong>'
-        goBtn.className = 'showing'
-        cancelBtn.className = 'showing'
-        doneBtn.className = 'hidden'
-        selectedCity = 'dogen'
+        // mapHeader.innerHTML = 'Would you like to travel to  <strong>Dogen City?</strong>'
+        // goBtn.className = 'showing'
+        // cancelBtn.className = 'showing'
+        // doneBtn.className = 'hidden'
+        // selectedCity = 'dogen'
+        locationSel.className = 'hidden'
+        dogen.className = 'showing';
+        document.querySelector('#dogen-intro').className = 'showing';
+        currentDialogue = dogenDialogue;
+        dogenNext.className = 'showing'
+        dogenReturn.className = 'hidden'
+        changeText(dialogueCount, currentDialogue, dogenResponse);
     })
 
-    cancelBtn.addEventListener('click', function () {
-        mapHeader.innerHTML = 'Choose a floating city to explore!'
-        goBtn.className = 'hidden'
-        cancelBtn.className = 'hidden'
-        doneBtn.className = 'showing'
-        selectedCity = 'none';
-    })
+    // cancelBtn.addEventListener('click', function () {
+    //     mapHeader.innerHTML = 'Choose a floating city to explore!'
+    //     goBtn.className = 'hidden'
+    //     cancelBtn.className = 'hidden'
+    //     doneBtn.className = 'showing'
+    //     selectedCity = 'none';
+    // })
 
-    goBtn.addEventListener('click', function () {
-        if (selectedCity === 'maldives') {
-            locationSel.className = 'hidden';
-            maldives.className = 'showing';
-            document.querySelector('#maldives-intro').className = 'showing';
-            currentDialogue = maldivesDialogue;
-            maldivesNext.className = 'showing'
-            maldivesReturn.className = 'hidden'
-            changeText(dialogueCount, currentDialogue, maldivesResponse);
-        } else if (selectedCity === 'oceanix') {
-            locationSel.className = 'hidden';
-            oceanix.className = 'showing';
-            document.querySelector('#oceanix-intro').className = 'showing';
-            currentDialogue = oceanixDialogue;
-            oceanixNext.className = 'showing'
-            oceanixReturn.className = 'hidden'
-            changeText(dialogueCount, currentDialogue, oceanixResponse);
-        } else if (selectedCity === 'dogen') {
-            locationSel.className = 'hidden'
-            dogen.className = 'showing';
-            document.querySelector('#dogen-intro').className = 'showing';
-            currentDialogue = dogenDialogue;
-            dogenNext.className = 'showing'
-            dogenReturn.className = 'hidden'
-            changeText(dialogueCount, currentDialogue, dogenResponse);
-        }
-        mapHeader.innerHTML = 'Choose a floating city to explore!'
-        goBtn.className = 'hidden'
-        cancelBtn.className = 'hidden'
-    })
+    // goBtn.addEventListener('click', function () {
+    //     if (selectedCity === 'maldives') {
+    //         locationSel.className = 'hidden';
+    //         maldives.className = 'showing';
+    //         document.querySelector('#maldives-intro').className = 'showing';
+    //         currentDialogue = maldivesDialogue;
+    //         maldivesNext.className = 'showing'
+    //         maldivesReturn.className = 'hidden'
+    //         changeText(dialogueCount, currentDialogue, maldivesResponse);
+    //     } else if (selectedCity === 'oceanix') {
+    //         locationSel.className = 'hidden';
+    //         oceanix.className = 'showing';
+    //         document.querySelector('#oceanix-intro').className = 'showing';
+    //         currentDialogue = oceanixDialogue;
+    //         oceanixNext.className = 'showing'
+    //         oceanixReturn.className = 'hidden'
+    //         changeText(dialogueCount, currentDialogue, oceanixResponse);
+    //     } else if (selectedCity === 'dogen') {
+    //         locationSel.className = 'hidden'
+    //         dogen.className = 'showing';
+    //         document.querySelector('#dogen-intro').className = 'showing';
+    //         currentDialogue = dogenDialogue;
+    //         dogenNext.className = 'showing'
+    //         dogenReturn.className = 'hidden'
+    //         changeText(dialogueCount, currentDialogue, dogenResponse);
+    //     }
+    //     mapHeader.innerHTML = 'Choose a floating city to explore!'
+    //     goBtn.className = 'hidden'
+    //     cancelBtn.className = 'hidden'
+    // })
 
 
     // Maldives
 
     document.querySelector('#maldives-next').addEventListener('click', function () {
         dialogueCount++
-        changeText(dialogueCount, currentDialogue, maldivesResponse);
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesNext);
     })
 
     document.querySelector('#m1').addEventListener('click', function () {
         dialogueCount = 0;
+        maldivesNext.style.opacity = 1;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
             element.className = 'hidden'
@@ -214,11 +226,12 @@
         document.querySelector('#maldives-q1').className = 'showing'
         const md = document.querySelectorAll('#maldives-q1 p');
         currentDialogue = md;
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesNext)
     })
 
     document.querySelector('#m2').addEventListener('click', function () {
         dialogueCount = 0;
+        maldivesNext.style.opacity = 1;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
             element.className = 'hidden'
@@ -226,11 +239,12 @@
         document.querySelector('#maldives-q2').className = 'showing'
         const md = document.querySelectorAll('#maldives-q2 p');
         currentDialogue = md;
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesNext)
     })
 
     document.querySelector('#m3').addEventListener('click', function () {
         dialogueCount = 0;
+        maldivesNext.style.opacity = 1;
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
             element.className = 'hidden'
@@ -238,7 +252,7 @@
         document.querySelector('#maldives-q3').className = 'showing'
         const md = document.querySelectorAll('#maldives-q3 p');
         currentDialogue = md;
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesNext)
     })
 
     document.querySelector('#m4').addEventListener('click', function () {
@@ -249,6 +263,7 @@
         });
         document.querySelector('#maldives-q4').className = 'showing';
         document.querySelector('#maldives-q4 p').className = 'showing'
+        maldivesResponse.className = 'hidden';
         maldivesNext.className = 'hidden';
         maldivesReturn.className = 'showing';
 
@@ -304,7 +319,8 @@
             element.className = 'hidden'
         });
         document.querySelector('#oceanix-q4').className = 'showing';
-        document.querySelector('#oceanix-q4 p').className = 'showing'
+        document.querySelector('#oceanix-q4 p').className = 'showing';
+        oceanixResponse.className = 'hidden'
         oceanixNext.className = 'hidden';
         oceanixReturn.className = 'showing';
     })
@@ -359,12 +375,13 @@
         });
         document.querySelector('#dogen-q4').className = 'showing';
         document.querySelector('#dogen-q4 p').className = 'showing'
+        dogenResponse.className = 'hidden'
         dogenNext.className = 'hidden';
         dogenReturn.className = 'showing';
     })
 
 
-    function changeText(dialogueCount, text, response) {
+    function changeText(dialogueCount, text, response, nextBtn) {
         if (dialogueCount <= text.length - 1) {
             response.className = 'response hidden'
             text.forEach(element => {
@@ -373,6 +390,7 @@
             text[dialogueCount].className = 'showing'
         } else if (dialogueCount > text.length - 1) {
             response.className = 'response';
+            nextBtn.style.opacity = 0;
         }
 
     }
