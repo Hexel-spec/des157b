@@ -191,7 +191,7 @@
                 speed: 20,
                 waitUntilVisible: true,
             }).go();
-        maldivesResponse.className = 'hidden';
+        maldivesResponse.className = 'response hidden';
         setTimeout(function(){
             maldives.className = 'hidden';
             locationSel.className = 'showing';
@@ -260,7 +260,7 @@
                 speed: 20,
                 waitUntilVisible: true,
             }).go();
-        oceanixResponse.className = 'hidden';
+        oceanixResponse.className = 'response hidden';
         setTimeout(function(){
             oceanix.className = 'hidden';
             locationSel.className = 'showing';
@@ -328,7 +328,7 @@
                 speed: 20,
                 waitUntilVisible: true,
             }).go();
-        dogenResponse.className = 'hidden';
+        dogenResponse.className = 'response hidden';
         setTimeout(function(){
             dogen.className = 'hidden';
             locationSel.className = 'showing';
