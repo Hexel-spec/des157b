@@ -3,6 +3,7 @@
     console.log('reading js');
 
     const startBtn = document.querySelector('#start');
+    const header = document.querySelector('header')
     const box = document.querySelector('#box')
     const onboarding = document.querySelector('#onboarding');
     const onboardingTextbox = document.querySelector('#onboarding .textbox');
@@ -36,9 +37,13 @@
 
     // Start page
     startBtn.addEventListener('click', function () {
-        document.querySelector('header').className = 'hidden';
-        box.className = 'showing';
-        onboarding.className = 'showing'
+        fadeIn(box);
+        // box.className = 'showing';
+        header.style.animation = 'fadeout 0.5s ease-in'
+        setTimeout(function () {
+            header.className = 'hidden'
+        }, 500)
+        fadeIn(onboarding);
         new TypeIt("#ob-1", {
             strings: "Hello, and welcome to Seabnb, the online rating platform for floating cities! I'm Savvy the Sea Turtle, and I'll be assisting you on your journey today!",
             speed: 10,
@@ -47,9 +52,28 @@
     })
 
     document.querySelector('#skip-intro').addEventListener('click', function () {
-        onboarding.className = 'hidden';
-        locationSel.className = 'showing';
+        // onboarding.style.animation = 'fadeout 0.5s ease-in'
+        // setTimeout(function () {
+        //     onboarding.className = 'hidden'
+        // }, 500)
+        fadeOut(onboarding);
+        // onboarding.className = 'hidden';
+        fadeIn(locationSel);
     })
+
+    function fadeOut(element){
+        element.style.animation = 'fadeout 0.5s ease-in'
+        setTimeout(function () {
+            element.className = 'hidden'
+        }, 500)
+    }
+
+    function fadeIn(element) {
+        element.style.animation = 'fadein 0.5s ease-in'
+        setTimeout(function () {
+            element.className = 'showing';
+        }, 500)
+    }
 
     onboardingTextbox.addEventListener('click', function () {
         let ob1 = document.querySelector('#ob-1');
@@ -57,11 +81,16 @@
         let ob3 = document.querySelector('#ob-3');
         let ob4 = document.querySelector('#ob-4');
         let ob5 = document.querySelector('#ob-5');
+        const peaceful = document.querySelector('#peaceful');
+        const oceanstorm = document.querySelector('#oceanstorm');
+        const floating = document.querySelector('#floating');
         const backstory = document.querySelector('#backstory');
         if (ob1.className === 'showing') {
             ob1.className = 'hidden';
             ob2.className = 'showing';
-            backstory.innerHTML = '<img src="images/oceanstorm.png" id="oceanstorm" class="background" alt="oceanstorm">'
+            fadeOut(peaceful);
+            fadeIn(oceanstorm);
+            // backstory.innerHTML = '<img src="images/oceanstorm.png" id="oceanstorm" class="background" alt="oceanstorm">'
             new TypeIt("#ob-2", {
                 strings: "In the near future, sea levels will rise due to climate change and cause many coastal areas to become inhabitable, displacing a multitude of coastal communities.",
                 speed: 10,
@@ -70,7 +99,8 @@
         } else if (ob2.className === 'showing') {
             ob2.className = 'hidden';
             ob3.className = 'showing';
-            backstory.innerHTML = '<img src="images/floating.png" id="floating" class="background" alt="floating city image">'
+            fadeOut(oceanstorm);
+            fadeIn(floating);
             new TypeIt("#ob-3", {
                 strings: "Floating city projects have emerged as an answer to this crisis, claiming to allow those that have been displaced (and anyone else who is interested) a safe and comfortable home.",
                 speed: 10,
@@ -93,15 +123,25 @@
                 waitUntilVisible: true,
             }).go();
         } else {
-            onboarding.className = 'hidden';
-            locationSel.className = 'showing';
+            onboarding.style.animation = 'fadeout 0.5s ease-in'
+            setTimeout(function () {
+                onboarding.className = 'hidden'
+            }, 500)
+            // onboarding.className = 'hidden';
+            locationSel.style.animation = 'fadein 0.5s ease-in'
+            setTimeout(function () {
+                locationSel.className = 'showing';
+            }, 500)
+
         }
 
     })
 
     pin1.addEventListener('click', function () {
-        locationSel.className = 'hidden';
-        maldives.className = 'showing';
+        fadeOut(locationSel);
+        fadeIn(maldives);
+        // locationSel.className = 'hidden';
+        // maldives.className = 'showing';
         maldivesMouse.className = 'fa-solid fa-computer-mouse';
         currentDialogue = document.querySelectorAll('#maldives-intro p');
         dialogueCount = 0;
@@ -110,8 +150,10 @@
     })
 
     pin2.addEventListener('click', function () {
-        locationSel.className = 'hidden';
-        oceanix.className = 'showing';
+        fadeOut(locationSel);
+        fadeIn(oceanix);
+        // locationSel.className = 'hidden';
+        // oceanix.className = 'showing';
         oceanixMouse.className = 'fa-solid fa-computer-mouse';
         currentDialogue = document.querySelectorAll('#oceanix-intro p');
         dialogueCount = 0;
@@ -120,8 +162,10 @@
     })
 
     pin3.addEventListener('click', function () {
-        locationSel.className = 'hidden'
-        dogen.className = 'showing';
+        fadeOut(locationSel);
+        fadeIn(dogen);
+        // locationSel.className = 'hidden'
+        // dogen.className = 'showing';
         dogenMouse.className = 'fa-solid fa-computer-mouse';
         currentDialogue = document.querySelectorAll('#dogen-intro p');
         dialogueCount = 0;
@@ -213,8 +257,10 @@
         }).go();
         maldivesResponse.className = 'response hidden';
         setTimeout(function () {
-            maldives.className = 'hidden';
-            locationSel.className = 'showing';
+            fadeOut(maldives);
+            fadeIn(locationSel);
+            // maldives.className = 'hidden';
+            // locationSel.className = 'showing';
             thankYou.className = 'hidden'
             thankYou.textContent = '';
         }, 3000)
@@ -225,7 +271,7 @@
     //Oceanix
     oceanixTextbox.addEventListener('click', function () {
         dialogueCount++
-        changeText(dialogueCount, currentDialogue, oceanixResponse)
+        changeText(dialogueCount, currentDialogue, oceanixResponse, oceanixMouse)
     })
 
     document.querySelector('#o1').addEventListener('click', function () {
@@ -238,7 +284,7 @@
         });
         document.querySelector('#oceanix-q1').className = 'showing'
         currentDialogue = document.querySelectorAll('#oceanix-q1 p');
-        changeText(dialogueCount, currentDialogue, oceanixResponse)
+        changeText(dialogueCount, currentDialogue, oceanixResponse, oceanixMouse)
     })
 
     document.querySelector('#o2').addEventListener('click', function () {
@@ -251,7 +297,7 @@
         });
         document.querySelector('#oceanix-q2').className = 'showing'
         currentDialogue = document.querySelectorAll('#oceanix-q2 p');
-        changeText(dialogueCount, currentDialogue, oceanixResponse)
+        changeText(dialogueCount, currentDialogue, oceanixResponse, oceanixMouse)
     })
 
     document.querySelector('#o3').addEventListener('click', function () {
@@ -264,7 +310,7 @@
         });
         document.querySelector('#oceanix-q3').className = 'showing'
         currentDialogue = document.querySelectorAll('#oceanix-q3 p');
-        changeText(dialogueCount, currentDialogue, oceanixResponse)
+        changeText(dialogueCount, currentDialogue, oceanixResponse, oceanixMouse)
     })
 
     document.querySelector('#o4').addEventListener('click', function () {
@@ -282,8 +328,10 @@
         }).go();
         oceanixResponse.className = 'response hidden';
         setTimeout(function () {
-            oceanix.className = 'hidden';
-            locationSel.className = 'showing';
+            fadeOut(oceanix);
+            fadeIn(locationSel);
+            // oceanix.className = 'hidden';
+            // locationSel.className = 'showing';
             thankYou.className = 'hidden'
             thankYou.textContent = '';
         }, 3000)
@@ -293,7 +341,7 @@
     // Dogen city
     dogenTextbox.addEventListener('click', function () {
         dialogueCount++
-        changeText(dialogueCount, currentDialogue, dogenResponse)
+        changeText(dialogueCount, currentDialogue, dogenResponse, dogenMouse)
     })
 
     document.querySelector('#d1').addEventListener('click', function () {
@@ -306,7 +354,7 @@
         });
         document.querySelector('#dogen-q1').className = 'showing'
         currentDialogue = document.querySelectorAll('#dogen-q1 p');
-        changeText(dialogueCount, currentDialogue, dogenResponse)
+        changeText(dialogueCount, currentDialogue, dogenResponse, dogenMouse)
     })
 
     document.querySelector('#d2').addEventListener('click', function () {
@@ -319,7 +367,7 @@
         });
         document.querySelector('#dogen-q2').className = 'showing'
         currentDialogue = document.querySelectorAll('#dogen-q2 p');
-        changeText(dialogueCount, currentDialogue, dogenResponse)
+        changeText(dialogueCount, currentDialogue, dogenResponse, dogenMouse)
     })
 
     document.querySelector('#d3').addEventListener('click', function () {
@@ -332,7 +380,7 @@
         });
         document.querySelector('#dogen-q3').className = 'showing'
         currentDialogue = document.querySelectorAll('#dogen-q3 p');
-        changeText(dialogueCount, currentDialogue, dogenResponse)
+        changeText(dialogueCount, currentDialogue, dogenResponse, dogenMouse)
     })
 
     document.querySelector('#d4').addEventListener('click', function () {
@@ -350,8 +398,10 @@
         }).go();
         dogenResponse.className = 'response hidden';
         setTimeout(function () {
-            dogen.className = 'hidden';
-            locationSel.className = 'showing';
+            fadeOut(dogen);
+            fadeIn(locationSel);
+            // dogen.className = 'hidden';
+            // locationSel.className = 'showing';
             thankYou.className = 'hidden'
             thankYou.textContent = '';
         }, 3000)
@@ -370,9 +420,12 @@
     })
 
     document.querySelector('#continue').addEventListener('click', function () {
-        overlay.className = 'hidden';
-        locationSel.className = 'hidden';
-        selection.className = 'showing';
+        fadeOut(overlay);
+        fadeOut(locationSel);
+        fadeIn(selection);
+        // overlay.className = 'hidden';
+        // locationSel.className = 'hidden;'
+        // selection.className = 'showing';
         dimmer.className = 'hidden';
         choiceTextbox.className = 'textbox showing';
         new TypeIt("#end1", {
@@ -403,8 +456,10 @@
                 console.log('there was an error')
             }
 
-            selection.className = 'hidden'
-            end.className = 'showing';
+            fadeOut(selection);
+            fadeIn(end);
+            // selection.className = 'hidden'
+            // end.className = 'showing';
             new TypeIt('#final-1', {
                 strings: `You chose to live in <strong>${chosenCity}</strong>. Good choice, we hope the move-in goes smoothly!`,
                 speed: 10,
