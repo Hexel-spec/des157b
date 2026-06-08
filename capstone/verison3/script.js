@@ -21,6 +21,17 @@
     const dogenTextbox = document.querySelector('#dogen .textbox');
     const dogenResponse = document.querySelector('#dogen .response');
     const dogenMouse = document.querySelector('#dogen .fa-computer-mouse');
+    const doneBtn = document.querySelector('#done');
+    const overlay = document.querySelector('#overlay');
+    const dimmer = document.querySelector('#dimmer')
+    const selection = document.querySelector('#city-selection');
+    const choiceTextbox = document.querySelector('#city-selection .textbox');
+    const cityChoices = document.querySelectorAll('.choice');
+    let chosenCity;
+    const chosenCityImg = document.querySelector('#chosen-city');
+    const end = document.querySelector('#ending');
+    const finalTextbox = document.querySelector('#final-textbox');
+    const replay = document.querySelector('#replay');
 
 
     // Start page
@@ -29,18 +40,18 @@
         box.className = 'showing';
         onboarding.className = 'showing'
         new TypeIt("#ob-1", {
-            strings: "Hello, and welcome to the beta test for Seabnb, the online rating platform for floating cities! I'm Savvy the Sea Turtle, and I'll be assisting you on your journey today!",
-            speed: 30,
+            strings: "Hello, and welcome to Seabnb, the online rating platform for floating cities! I'm Savvy the Sea Turtle, and I'll be assisting you on your journey today!",
+            speed: 10,
             waitUntilVisible: true,
         }).go();
     })
 
-    document.querySelector('#skip-intro').addEventListener('click', function(){
+    document.querySelector('#skip-intro').addEventListener('click', function () {
         onboarding.className = 'hidden';
         locationSel.className = 'showing';
     })
 
-    onboardingTextbox.addEventListener('click', function(){
+    onboardingTextbox.addEventListener('click', function () {
         let ob1 = document.querySelector('#ob-1');
         let ob2 = document.querySelector('#ob-2');
         let ob3 = document.querySelector('#ob-3');
@@ -50,66 +61,75 @@
         if (ob1.className === 'showing') {
             ob1.className = 'hidden';
             ob2.className = 'showing';
-            backstory.innerHTML = '<img src="images/oceanstorm.png" id="oceanstorm" alt="oceanstorm">'
+            backstory.innerHTML = '<img src="images/oceanstorm.png" id="oceanstorm" class="background" alt="oceanstorm">'
             new TypeIt("#ob-2", {
                 strings: "In the near future, sea levels will rise due to climate change and cause many coastal areas to become inhabitable, displacing a multitude of coastal communities.",
-                speed: 20,
+                speed: 10,
                 waitUntilVisible: true,
             }).go();
         } else if (ob2.className === 'showing') {
             ob2.className = 'hidden';
             ob3.className = 'showing';
-            backstory.innerHTML = '<img src="images/floating.png" id="floating" alt="floating city image">'
+            backstory.innerHTML = '<img src="images/floating.png" id="floating" class="background" alt="floating city image">'
             new TypeIt("#ob-3", {
                 strings: "Floating city projects have emerged as an answer to this crisis, claiming to allow those that have been displaced (and anyone else who is interested) a safe and comfortable home.",
-                speed: 20,
+                speed: 10,
                 waitUntilVisible: true,
             }).go();
         } else if (ob3.className === 'showing') {
             ob3.className = 'hidden';
             ob4.className = 'showing';
             new TypeIt("#ob-4", {
-                strings: "Seabnb aims to allow people to make informed decisions about living in floating cities, which is why we're asking you to explore these floating cities and form your own conclusions",
-                speed: 20,
+                strings: "Seabnb aims to allow people to make informed decisions about living in floating cities, which is why we're allowing to explore these floating cities to know which floating city is right for you!",
+                speed: 10,
                 waitUntilVisible: true,
             }).go();
         } else if (ob4.className === 'showing') {
             ob4.className = 'hidden';
             ob5.className = 'showing';
             new TypeIt("#ob-5", {
-                strings: "You've been tasked with visiting three different floating cities: <strong>Maldives Floating City</strong> in Maldvies, <strong>Oceanix Busan in South Korea,</strong> and <strong>Dogen City in Japan</strong>. We wish you good luck!",
-                speed: 20,
+                strings: "There are three different floating cities that you can choose from: <strong>Maldives Floating City</strong> in Maldvies, <strong>Oceanix Busan</strong> in South Korea, and <strong>Dogen City</strong> in Japan. We wish you good luck!",
+                speed: 10,
                 waitUntilVisible: true,
             }).go();
         } else {
             onboarding.className = 'hidden';
             locationSel.className = 'showing';
         }
-        
+
     })
 
     pin1.addEventListener('click', function () {
         locationSel.className = 'hidden';
         maldives.className = 'showing';
+        maldivesMouse.className = 'fa-solid fa-computer-mouse';
         currentDialogue = document.querySelectorAll('#maldives-intro p');
+        dialogueCount = 0;
+        document.querySelector('#maldives-intro').className = 'showing';
         changeText(dialogueCount, currentDialogue, maldivesResponse);
     })
 
     pin2.addEventListener('click', function () {
         locationSel.className = 'hidden';
         oceanix.className = 'showing';
+        oceanixMouse.className = 'fa-solid fa-computer-mouse';
         currentDialogue = document.querySelectorAll('#oceanix-intro p');
+        dialogueCount = 0;
+        document.querySelector('#oceanix-intro').className = 'showing';
         changeText(dialogueCount, currentDialogue, oceanixResponse);
     })
 
     pin3.addEventListener('click', function () {
         locationSel.className = 'hidden'
         dogen.className = 'showing';
+        dogenMouse.className = 'fa-solid fa-computer-mouse';
         currentDialogue = document.querySelectorAll('#dogen-intro p');
+        dialogueCount = 0;
+        document.querySelector('#dogen-intro').className = 'showing';
         changeText(dialogueCount, currentDialogue, dogenResponse);
     })
 
-    function changeText(dialogueCount, text, response) {
+    function changeText(dialogueCount, text, response, mouse) {
         console.log(text);
         console.log(text.length);
         console.log(dialogueCount);
@@ -128,20 +148,20 @@
             }).go();
         } else if (dialogueCount > text.length - 1) {
             response.className = 'response';
-            maldivesMouse.style.opacity = 0;
+            mouse.className = 'hidden';
         }
 
     }
 
     // Maldives
-    maldivesTextbox.addEventListener('click', function(){
+    maldivesTextbox.addEventListener('click', function () {
         dialogueCount++
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesMouse)
     })
 
     document.querySelector('#m1').addEventListener('click', function () {
         dialogueCount = 0;
-        maldivesMouse.style.opacity = 1;
+        maldivesMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#m1').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -149,12 +169,12 @@
         });
         document.querySelector('#maldives-q1').className = 'showing'
         currentDialogue = document.querySelectorAll('#maldives-q1 p');
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesMouse)
     })
 
     document.querySelector('#m2').addEventListener('click', function () {
         dialogueCount = 0;
-        maldivesMouse.style.opacity = 1;
+        maldivesMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#m2').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -162,12 +182,12 @@
         });
         document.querySelector('#maldives-q2').className = 'showing'
         currentDialogue = document.querySelectorAll('#maldives-q2 p');
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesMouse)
     })
 
     document.querySelector('#m3').addEventListener('click', function () {
         dialogueCount = 0;
-        maldivesMouse.style.opacity = 1;
+        maldivesMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#m3').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#maldives-intro').className = 'hidden'
         document.querySelectorAll('#maldives-textbox section').forEach(element => {
@@ -175,7 +195,7 @@
         });
         document.querySelector('#maldives-q3').className = 'showing'
         currentDialogue = document.querySelectorAll('#maldives-q3 p');
-        changeText(dialogueCount, currentDialogue, maldivesResponse)
+        changeText(dialogueCount, currentDialogue, maldivesResponse, maldivesMouse)
     })
 
     document.querySelector('#m4').addEventListener('click', function () {
@@ -187,12 +207,12 @@
         const thankYou = document.querySelector('#maldives-q4 p')
         thankYou.className = 'showing'
         new TypeIt('#maldives-q4 p', {
-                strings: "Thank you for visiting Maldives Floating City! We hope you choose to stay with us!",
-                speed: 20,
-                waitUntilVisible: true,
-            }).go();
+            strings: "Thank you for visiting Maldives Floating City! We hope you choose to stay with us!",
+            speed: 20,
+            waitUntilVisible: true,
+        }).go();
         maldivesResponse.className = 'response hidden';
-        setTimeout(function(){
+        setTimeout(function () {
             maldives.className = 'hidden';
             locationSel.className = 'showing';
             thankYou.className = 'hidden'
@@ -203,14 +223,14 @@
 
 
     //Oceanix
-    oceanixTextbox.addEventListener('click', function(){
+    oceanixTextbox.addEventListener('click', function () {
         dialogueCount++
         changeText(dialogueCount, currentDialogue, oceanixResponse)
     })
 
     document.querySelector('#o1').addEventListener('click', function () {
         dialogueCount = 0;
-        oceanixMouse.style.opacity = 1;
+        oceanixMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#o1').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -223,7 +243,7 @@
 
     document.querySelector('#o2').addEventListener('click', function () {
         dialogueCount = 0;
-        oceanixMouse.style.opacity = 1;
+        oceanixMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#o2').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -236,7 +256,7 @@
 
     document.querySelector('#o3').addEventListener('click', function () {
         dialogueCount = 0;
-        oceanixMouse.style.opacity = 1;
+        oceanixMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#o3').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#oceanix-intro').className = 'hidden'
         document.querySelectorAll('#oceanix-textbox section').forEach(element => {
@@ -256,29 +276,29 @@
         const thankYou = document.querySelector('#oceanix-q4 p')
         thankYou.className = 'showing'
         new TypeIt('#oceanix-q4 p', {
-                strings: "Thank you for visiting Oceanix Busan! We hope you choose to stay with us!",
-                speed: 20,
-                waitUntilVisible: true,
-            }).go();
+            strings: "Thank you for visiting Oceanix Busan! We hope you choose to stay with us!",
+            speed: 20,
+            waitUntilVisible: true,
+        }).go();
         oceanixResponse.className = 'response hidden';
-        setTimeout(function(){
+        setTimeout(function () {
             oceanix.className = 'hidden';
             locationSel.className = 'showing';
             thankYou.className = 'hidden'
             thankYou.textContent = '';
         }, 3000)
-    })    
+    })
 
 
     // Dogen city
-    dogenTextbox.addEventListener('click', function(){
+    dogenTextbox.addEventListener('click', function () {
         dialogueCount++
         changeText(dialogueCount, currentDialogue, dogenResponse)
     })
 
     document.querySelector('#d1').addEventListener('click', function () {
         dialogueCount = 0;
-        dogenMouse.style.opacity = 1;
+        dogenMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#d1').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -291,7 +311,7 @@
 
     document.querySelector('#d2').addEventListener('click', function () {
         dialogueCount = 0;
-        dogenMouse.style.opacity = 1;
+        dogenMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#d2').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -304,7 +324,7 @@
 
     document.querySelector('#d3').addEventListener('click', function () {
         dialogueCount = 0;
-        dogenMouse.style.opacity = 1;
+        dogenMouse.className = 'fa-solid fa-computer-mouse';
         document.querySelector('#d3').style.color = 'rgb(85, 72, 62)'
         document.querySelector('#dogen-intro').className = 'hidden'
         document.querySelectorAll('#dogen-textbox section').forEach(element => {
@@ -324,12 +344,12 @@
         const thankYou = document.querySelector('#dogen-q4 p')
         thankYou.className = 'showing'
         new TypeIt('#dogen-q4 p', {
-                strings: "Thank you for visiting Dogen City! We hope you choose to stay with us!",
-                speed: 20,
-                waitUntilVisible: true,
-            }).go();
+            strings: "Thank you for visiting Dogen City! We hope you choose to stay with us!",
+            speed: 20,
+            waitUntilVisible: true,
+        }).go();
         dogenResponse.className = 'response hidden';
-        setTimeout(function(){
+        setTimeout(function () {
             dogen.className = 'hidden';
             locationSel.className = 'showing';
             thankYou.className = 'hidden'
@@ -337,7 +357,104 @@
         }, 3000)
     })
 
-    
+    doneBtn.addEventListener('click', function () {
+        overlay.className = 'showing';
+        dimmer.className = 'showing';
+        doneBtn.className = 'hidden';
+    })
+
+    document.querySelector('#cancel').addEventListener('click', function () {
+        overlay.className = 'hidden';
+        dimmer.className = 'hidden';
+        doneBtn.className = 'showing';
+    })
+
+    document.querySelector('#continue').addEventListener('click', function () {
+        overlay.className = 'hidden';
+        locationSel.className = 'hidden';
+        selection.className = 'showing';
+        dimmer.className = 'hidden';
+        choiceTextbox.className = 'textbox showing';
+        new TypeIt("#end1", {
+            strings: "Thank you for taking time to discover and explore floating cities. Now, we ask you to take just a minute or two to select the floating city you'd like to live in the most.",
+            speed: 10,
+            waitUntilVisible: true,
+        }).go();
+    })
+
+    // choiceTextbox.addEventListener('click', function () {
+    //     console.log('clicked!')
+    //     // document.querySelector('.background-color').className = 'showing';
+    //     choiceTextbox.className = 'textbox hidden';
+    // })
+
+    cityChoices.forEach(element => {
+        element.addEventListener('click', function () {
+            if (element.id === 'choose-maldives') {
+                chosenCity = 'Maldives Floating City';
+                chosenCityImg.innerHTML = '<img src="images/maldives_overlook.jpg" class="background final" alt="maldives" alt="maldives-image" width="1000">'
+            } else if (element.id === 'choose-oceanix') {
+                chosenCity = 'Oceanix Busan'
+                chosenCityImg.innerHTML = '<img src="images/oceanix-busan.jpg" class="background final" alt="maldives" alt="oceanix-image" width="1000">'
+            } else if (element.id === 'choose-dogen') {
+                chosenCity = 'Dogen City'
+                chosenCityImg.innerHTML = '<img src="images/dogen-city.jpg" class="background final" alt="maldives" alt="dogen-image" width="1000">'
+            } else {
+                console.log('there was an error')
+            }
+
+            selection.className = 'hidden'
+            end.className = 'showing';
+            new TypeIt('#final-1', {
+                strings: `You chose to live in <strong>${chosenCity}</strong>. Good choice, we hope the move-in goes smoothly!`,
+                speed: 10,
+                waitUntilVisible: true,
+            }).go();
+        })
+
+    });
+
+    finalTextbox.addEventListener('click', function () {
+        const final1 = document.querySelector('#final-1');
+        const final2 = document.querySelector('#final-2');
+        const final3 = document.querySelector('#final-3');
+        const final4 = document.querySelector('#final-4');
+        if (final1.className === 'showing') {
+            final1.className = 'hidden';
+            final2.className = 'showing';
+            new TypeIt('#final-2', {
+                strings: `To be honest, the future is always uncertain, especially with the effects of climate change getting worse and worse.`,
+                speed: 10,
+                waitUntilVisible: true,
+            }).go();
+
+        } else if (final2.className === 'showing') {
+            final2.className = 'hidden';
+            final3.className = 'showing';
+            new TypeIt('#final-3', {
+                strings: `But as long as we continue to live, we can find ways to adapt to the changing future, instead of always dreading what's happening around us.`,
+                speed: 10,
+                waitUntilVisible: true,
+            }).go();
+        } else if (final3.className === 'showing') {
+            final3.className = 'hidden';
+            final4.className = 'showing';
+            new TypeIt('#final-4', {
+                strings: 'Your willingness to traverse new possibilites will allow you to thrive, no matter what the future holds!',
+                speed: 10,
+                waitUntilVisible: true,
+            }).go();
+            document.querySelector('#final-textbox .fa-computer-mouse').className = 'fa-solid fa-computer-mouse hidden';
+            setTimeout(function () { replay.className = 'showing'; }, 3000)
+
+        }
+    })
+
+    replay.addEventListener('click', function () {
+        window.location.reload();
+    })
+
+
 
     particlesJS("particles-js", {
         particles: {
