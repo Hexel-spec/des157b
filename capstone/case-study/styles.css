@@ -1,0 +1,107 @@
+/* CSS Resets */
+h1, h2, h3, h4, p, nav ul {
+    padding: 0;
+    margin: 0;
+}
+nav ul {
+    list-style-type: none;
+}
+img { max-width: 100%; display: block; }
+* { box-sizing: border-box;}
+
+/* end Resets */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(56, 78, 98);
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+}
+nav {
+    border-top: 2px solid #333;
+}
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color:cornflowerblue;
+    background-color: aquamarine;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(56, 78, 98);
+    text-align: center;
+    padding: 10px;
+
+}
+
+header, footer {
+    background-color: aquamarine;
+}
+
+header, section, footer {
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 800;
+}
+
+section:nth-child(odd){
+    background-color: rgb(56, 78, 98);
+    color: aliceblue;
+}
+
+section:nth-child(even){
+    background-color: rgb(171, 203, 231);
+}
+
+.container {
+    max-width: 1000px;
+}
+
+h1, h2 {
+    margin-bottom: .5em;
+}
+
+p {
+    line-height: 1.4em;
+    margin-bottom: 1em;
+}
+
+ol li {
+    margin-bottom: 1em;
+}
+
+img {
+    margin-bottom: 20px;
+}
+
+#seabnbVideo {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    nav ul { display: flex; }
+    nav ul li { flex: 1; }
+}
+
+@media only screen and (min-width: 1000px) {
+    .container{ margin: auto; }
+    nav ul {
+        max-width: 1000px;
+        margin: auto;
+    }
+    .content { 
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
