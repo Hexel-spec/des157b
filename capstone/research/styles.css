@@ -31,3 +31,15 @@ table, th, td {
   border:1px solid rgb(52, 63, 63);
   padding: 0.4em;
 }
+
+.usability-gallery {
+    display: flex;
+    gap: 20px;
+    width: 700px;
+}
+
+.usability-gallery img {
+    display: block;
+    /* width: 700px; */
+    margin: auto;
+}
